@@ -1,0 +1,16 @@
+No. Time    Source  Destination Protocol    Length  Info
+90	2.460045			LE LL	56	
+66	1.805988	42:21:43:5a:81:65	Broadcast	LE LL	44	ADV_IND
+73	1.968586	40:ba:48:4c:e1:d3	Broadcast	LE LL	52	ADV_NONCONN_IND
+557	14.682311	4b:ed:1e:a2:46:78	6d:b6:9b:43:14:c8	LE LL	31	SCAN_REQ
+710	19.209835	3e:c6:e0:dc:fd:c3	f8:e8:13:0d:4a:c9	LE LL	40	AUX_SCAN_REQ
+729	19.657566	2e:85:cf:35:85:52	79:c6:fa:10:bf:96	LE LL	69	AUX_CONNECT_REQ
+630	16.882132	Anonymous	AccordionNet_74:f6:50	LE LL	56	AUX_CONNECT_RSP
+451	12.003709			LE LL	35	Control Opcode: LL_CONNECTION_PARAM_REQ
+236	6.339403			LE LL	53	Control Opcode: LL_PHY_UPDATE_IND
+27	0.757504			LE LL	38	Control Opcode: Unknown
+26	0.655476			LE LL	19	Empty PDU
+47	1.329706			LE LL	40	L2CAP Fragment
+50	1.381715			LE LL	43	L2CAP Fragment Start
+1124	30.619570	Espressif_70:ea:ea	Broadcast	BT Mesh PB-ADV	35	Transaction Start
+777	20.940808	70:5c:8d:62:40:5f	0a:1c:f2:6d:97:4a	LE LL	61	Unknown
