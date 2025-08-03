@@ -1,0 +1,36 @@
+Frame 1929: 47 bytes on wire (376 bits), 47 bytes captured (376 bits)
+Bluetooth
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x1c60 (PDU Type: ADV_IND, ChSel: #2, TxAdd: Random)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..1. .... = Channel Selection Algorithm: #2
+        .1.. .... = Tx Address: Random
+        0... .... = Reserved: 0
+        Length: 28
+    Advertising Address: d5:65:ec:9f:e0:18 (d5:65:ec:9f:e0:18)
+    Advertising Data
+        Appearance: Keyboard
+            Length: 3
+            Type: Appearance (0x19)
+            Appearance: Keyboard (0x03c1)
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...0 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): false (0x0)
+            .... 0... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): false (0x0)
+            .... .1.. = BR/EDR Not Supported: true (0x1)
+            .... ..0. = LE General Discoverable Mode: false (0x0)
+            .... ...0 = LE Limited Discoverable Mode: false (0x0)
+        16-bit Service Class UUIDs
+            Length: 3
+            Type: 16-bit Service Class UUIDs (0x03)
+            UUID 16: Human Interface Device (0x1812)
+        Device Name: ROG AZOTH
+            Length: 10
+            Type: Device Name (0x09)
+            Device Name: ROG AZOTH
+    CRC: 0xb6f293
