@@ -1,3 +1,5 @@
+Here are all the types of BLE Protocol Data Units (PDUs) that I observed in my packet capture:
+
 | Info Column Text | Protocol | Detailed Explanation |
 |------------------|----------|----------------------|
 | (Empty) | LE LL | Generic Bluetooth Low Energy (BLE) Link Layer packet. This likely represents a standard LE LL PDU where Wireshark does not display specific info, possibly a data channel packet or an unrecognized type with length 56 bytes. In BLE, LE LL encompasses all link layer communications, including advertising, scanning, and data exchange. |

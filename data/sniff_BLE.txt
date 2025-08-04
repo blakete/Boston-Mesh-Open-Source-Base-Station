@@ -1,3 +1,0 @@
-```console
-./ice9-bluetooth -l -i hackrf-000000000000000078d063dc2b877067 -c 2427 -C 20 -w hackrf_BLE_sniff_20_channels_for_bitchat.pcap
-```
