@@ -7,8 +7,4 @@ Built to extend BitChat's range, reliability, and resilience across the city of 
 
 ### 🎯 Initial Goal
 
-Deploy mesh-connected Raspberry Pi nodes that:
-
-* **Relay BLE messages** to extend wireless coverage.
-* **Store and forward** encrypted messages when peers are offline.
-* **Bridge local BitChat traffic** across long-range radio or IP backhaul to connect distant mesh clusters.
+Build a cheap, open source BitChat base station & relay to extend peer discovery and messaging across Boston. Mobile phones running BitChat can connect via BLE or LAN/IP (e.g., at home), and the base station uses P2P radio links and existing internet infrastructure to join and maintain the wider mesh network.
