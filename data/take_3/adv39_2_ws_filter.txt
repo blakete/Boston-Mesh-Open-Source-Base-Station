@@ -1,0 +1,5 @@
+`_ws.col.info matches "ADV_IN|SCAN_RSP"
+ and btcommon.eir_ad.entry.company_id == 0x004c and bluetooth.src == 66:ec:0e:84:4f:6e`
+
+ ---
+

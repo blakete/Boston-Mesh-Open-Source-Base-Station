@@ -1,0 +1,44 @@
+$ python3 bitchat_10.py
+2025-08-05 20:31:51.927517 Central manager state updated: 5
+2025-08-05 20:31:51.927564 Central powered on; scanning
+2025-08-05 20:31:51.970705 Discovered peer: Blake’s iPhone with RSSI: -37 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:51.986537 Discovered peer: Blake’s iPhone with RSSI: -37 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:52.047249 Discovered peer: Blake’s iPhone with RSSI: -39 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:52.100944 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:52.103208 Discovered peer: Blake’s iPhone with RSSI: -40 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:52.104749 Discovered peer: Blake’s iPhone with RSSI: -40 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:52.372959 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:52.373467 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:52.487544 Connected to Blake’s iPhone ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:31:53.175218 Discovered 1 services: ['F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C']
+2025-08-05 20:31:53.297364 Discovered 1 characteristics for service F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C: ['A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D']
+2025-08-05 20:31:53.298596 Sent ANNOUNCE payload
+2025-08-05 20:31:53.298880 Sent NOISE_IDENTITY_ANNOUNCE
+2025-08-05 20:31:53.590481 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:55.411351 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:55.843506 Received notification: 010406000001987ccab38e01004b14b0e0e57cca96eaffffffffffffffff10000001987ccab38e2430464641453034432d303238372d344241332d413342362d37323142394642373835374105626c616b650004746573741031346230653065353763636139366561b3d564be27a2c0859e193a6f145b8899d431119deaae3fd391c22b7903ab2bb629d76c629eae099ac8e678b566a83c27fbb868c010b13e1092e500ba11dff1617f548cf231ce323f71817449b107fe50c58e8e72ba169985d481f0a389201b68168906f8eea02abb8d399be40ee79aa4187861981626fd27a03c7c30cee9561fbabe5478eee3473d71e2631fe0a1471a7daefc3fbca297
+2025-08-05 20:31:55.843699 Parsing: version=1 at pos=1
+2025-08-05 20:31:55.843753 Parsing: type=4 at pos=2
+2025-08-05 20:31:55.843792 Parsing: senderID=06000001987ccab3 at pos=10
+2025-08-05 20:31:55.843826 Parsing: recipientID=8e01004b14b0e0e5 at pos=18
+2025-08-05 20:31:55.843861 Parsing: timestamp=8992165542060097535 at pos=26
+2025-08-05 20:31:55.843895 Parsing: ttl=255 at pos=27
+2025-08-05 20:31:55.843942 Parsing: payload_len=65535 at pos=29
+2025-08-05 20:31:55.843978 Parsing failed: payload_len exceeds data length
+2025-08-05 20:31:55.844009 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:31:55.844058 Found 'blake' at position 77
+2025-08-05 20:31:55.844095 Found 'd' at position 107
+2025-08-05 20:31:55.844132 Parsing: version=152 at pos=1
+2025-08-05 20:31:55.844164 Parsing: type=124 at pos=2
+2025-08-05 20:31:55.844209 Parsing: senderID=cab38e01004b14b0 at pos=10
+2025-08-05 20:31:55.844244 Parsing: recipientID=e0e57cca96eaffff at pos=18
+2025-08-05 20:31:55.844277 Parsing: timestamp=18446744073709490176 at pos=26
+2025-08-05 20:31:55.844305 Parsing: ttl=0 at pos=27
+2025-08-05 20:31:55.844335 Parsing: payload_len=408 at pos=29
+2025-08-05 20:31:55.844364 Parsing failed: payload_len exceeds data length
+2025-08-05 20:31:56.900647 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:57.175675 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:57.176315 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:57.450841 Discovered non-BitChat peripheral: None
+2025-08-05 20:31:57.451372 Discovered non-BitChat peripheral: None
+^C%                                                                      
