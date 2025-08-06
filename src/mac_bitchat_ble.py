@@ -13,6 +13,7 @@ import signal
 from binascii import hexlify
 from datetime import datetime
 from typing import Optional, Tuple
+import re
 
 # PyObjC imports
 import objc  # type: ignore
@@ -24,9 +25,49 @@ from CoreBluetooth import (  # type: ignore
     CBCharacteristicPropertyRead, CBCharacteristicPropertyWrite, CBCharacteristicPropertyNotify,
     CBAttributePermissionsReadable, CBAttributePermissionsWriteable,
     CBATTErrorSuccess,
-    CBAdvertisementDataServiceUUIDsKey, CBAdvertisementDataLocalNameKey
+    CBAdvertisementDataServiceUUIDsKey, CBAdvertisementDataLocalNameKey,
+    CBAdvertisementDataServiceDataKey, CBAdvertisementDataManufacturerDataKey,
+    CBCentralManagerScanOptionAllowDuplicatesKey
 )
 from PyObjCTools import AppHelper
+
+# UUID_RE = re.compile(rb"[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}")
+# HEXSET = set(b"0123456789abcdefABCDEF")
+
+PEER_NICKS: dict[str, str] = {}
+
+UUID_RE = re.compile(rb"[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}")
+HEXSET = set(b"0123456789abcdefABCDEF")
+
+def plausible_epoch_ms(ms: int) -> bool:
+    # 2015-01-01 .. 2035-01-01
+    return 1420070400000 <= ms <= 2051222400000
+
+def looks_hex_ascii(b: bytes) -> bool:
+    return len(b) > 0 and all(ch in HEXSET for ch in b)
+
+def sanitize_oneline(s: str) -> str:
+    return s.replace("\r", " ").replace("\n", " ").strip()
+
+def find_uuid_after(buf: bytes, start: int, window: int = 96):
+    """
+    Search in [start, start+window) for either:
+      • 0x24 (36) + 36-byte UUID, or
+      • bare 36-byte UUID.
+    Returns (uuid_str, end_pos) or (None, start).
+    """
+    n = len(buf)
+    end_search = min(n, start + window)
+    i = start
+    while i + 36 <= end_search:
+        # Case A: length=36 then UUID
+        if buf[i] == 36 and i + 1 + 36 <= n and UUID_RE.fullmatch(buf[i+1:i+1+36]):
+            return buf[i+1:i+1+36].decode("ascii", "ignore"), i + 1 + 36
+        # Case B: bare UUID
+        if UUID_RE.fullmatch(buf[i:i+36]):
+            return buf[i:i+36].decode("ascii", "ignore"), i + 36
+        i += 1
+    return None, start
 
 # ----------------------------
 # Logging
@@ -87,8 +128,211 @@ MY_PEER_ID_HEX = ''.join(f"{random.randint(0, 255):02x}" for _ in range(8))
 MY_PEER_ID = bytes.fromhex(MY_PEER_ID_HEX)
 MY_NICKNAME = "MyMacPeer"
 
-logging.info(f"My PeerID: {MY_PEER_ID_HEX}  Nick: {MY_NICKNAME}")
+logging.info(f"My PeerID: {MY_PEER_ID_HEX}  Nick: @{MY_NICKNAME}")
 
+# Peer directory: peer_id_hex -> nickname (best known)
+PEER_NICKS: dict[str, str] = {}
+
+def read_len_str(buf: bytes, pos: int, *, prefer_one_byte: bool = True, one_byte_max: int = 64) -> tuple[str, int]:
+    n = len(buf)
+    if pos >= n:
+        raise ValueError("read_len_str: pos OOB")
+
+    def try_1byte(p: int):
+        if p >= n: return None
+        L = buf[p]
+        end = p + 1 + L
+        if L <= one_byte_max and end <= n:
+            return buf[p+1:end].decode("utf-8", "ignore"), end
+        return None
+
+    def try_2byte(p: int):
+        if p + 2 > n: return None
+        L2 = int.from_bytes(buf[p:p+2], "big")
+        end = p + 2 + L2
+        if end <= n:
+            return buf[p+2:end].decode("utf-8", "ignore"), end
+        return None
+
+    if prefer_one_byte:
+        v = try_1byte(pos)
+        if v is not None: return v
+        v = try_2byte(pos)
+        if v is not None: return v
+    else:
+        v = try_2byte(pos)
+        if v is not None: return v
+        v = try_1byte(pos)
+        if v is not None: return v
+
+    raise ValueError(f"read_len_str: cannot decode at pos {pos}")
+
+
+# def looks_hex_ascii(b: bytes) -> bool:
+#     return len(b) > 0 and all(ch in HEXSET for ch in b)
+
+# def sanitize_oneline(s: str) -> str:
+#     # Console-friendly one-liner
+#     return s.replace("\r", " ").replace("\n", " ").strip()
+
+def decode_broadcast_message(payload: bytes) -> dict:
+    """
+    Layout observed from iOS:
+      flags(1) + timestamp_ms(8)   [optional prelude, commonly present]
+      [optional] 0x24 + 36-byte UUID  OR bare 36-byte UUID
+      sender (1B or 2B len; prefer 1B)
+      content (2B or 1B len; prefer 2B)
+      [optional] senderPeerID (1B len 8..32, hex-ascii)
+      [optional] small binary blob (1B len)
+    Returns: {"id": Optional[str], "sender": str, "content": str, "senderPeerID": Optional[str]}
+    """
+    pos = 0
+    n = len(payload)
+
+    # --- Optional prelude: 1B flags + 8B timestamp (big-endian ms) ---
+    if n >= 9:
+        ts = int.from_bytes(payload[1:9], "big")
+        if plausible_epoch_ms(ts):
+            pos = 9  # skip flags + timestamp
+
+    # --- Optional UUID/message ID (scan a small window) ---
+    msg_id, pos_after_uuid = find_uuid_after(payload, pos, window=96)
+    if msg_id:
+        pos = pos_after_uuid
+
+    # --- Sender (prefer 1B length) ---
+    sender, pos = read_len_str(payload, pos, prefer_one_byte=True)
+
+    # --- Content (prefer 2B length for longer texts) ---
+    content, pos = read_len_str(payload, pos, prefer_one_byte=False)
+
+    # --- Optional senderPeerID (hex-ascii via 1B len 8..32) ---
+    sender_peer = None
+    if pos < n:
+        L = payload[pos]
+        if 8 <= L <= 32 and pos + 1 + L <= n:
+            cand = payload[pos+1:pos+1+L]
+            if looks_hex_ascii(cand):
+                # safe parse
+                try:
+                    sender_peer, pos = read_len_str(payload, pos, prefer_one_byte=True)
+                except Exception:
+                    sender_peer = cand.decode("ascii", "ignore")
+
+    # --- Optional tiny trailing blob (skip) ---
+    if pos < n:
+        L = payload[pos]
+        if L >= 1 and pos + 1 + L <= n:
+            pos += 1 + L
+
+    return {
+        "id": msg_id,
+        "sender": sender,
+        "content": content,
+        "senderPeerID": sender_peer
+    }
+    
+def try_parse_adv_service_nick(service_data: dict) -> str:
+    """
+    If the iPhone includes nickname inside Service Data for our SERVICE_UUID,
+    try to decode it (UTF-8 payload). Otherwise return "".
+    """
+    if not service_data:
+        return ""
+    try:
+        # Keys are CBUUIDs; look for our service UUID
+        for k, v in service_data.items():
+            try:
+                if hasattr(k, "UUIDString") and k.UUIDString() == SERVICE_UUID_STR:
+                    b = bytes(v) if hasattr(v, "bytes") else (v if isinstance(v, bytes) else None)
+                    if b is None:
+                        continue
+                    # Heuristic 1: plain UTF-8 nickname
+                    maybe = safe_utf8(b)
+                    if maybe and 1 <= len(maybe) <= 64:
+                        return maybe
+                    # Heuristic 2: 1-byte length + UTF-8
+                    if len(b) >= 2 and b[0] <= 64 and 1 + b[0] <= len(b):
+                        maybe = safe_utf8(b[1:1+b[0]])
+                        if maybe:
+                            return maybe
+                    # Heuristic 3: 2-byte BE length + UTF-8
+                    if len(b) >= 3:
+                        L = int.from_bytes(b[0:2], "big")
+                        if 2 + L <= len(b):
+                            maybe = safe_utf8(b[2:2+L])
+                            if maybe:
+                                return maybe
+            except Exception:
+                continue
+    except Exception:
+        pass
+    return ""
+  
+def try_parse_noise_identity_nick(payload: bytes) -> str:
+    """
+    Tries to parse nickname from a binary NoiseIdentityAnnouncement of the form:
+      len(peerID)(2) + peerID(utf-8) +
+      32 static + 32 signing +
+      len(nick)(2) + nick(utf-8) +
+      8 ts + len(prev)(2) + prev + 64 sig
+    If payload is JSON, fall back to reading "nickname" field if present.
+    """
+    if not payload:
+        return ""
+    # JSON path
+    if payload[:1] == b"{" or payload[:1] == b"[":
+        try:
+            import json
+            js = json.loads(payload.decode("utf-8", "ignore"))
+            # common keys: "nickname", "name"
+            for key in ("nickname", "name"):
+                if isinstance(js, dict) and key in js and isinstance(js[key], str):
+                    return js[key].strip()
+        except Exception:
+            return ""
+        return ""
+    # Binary path
+    try:
+        pos = 0
+        if len(payload) < 2: return ""
+        L_peer = int.from_bytes(payload[pos:pos+2], "big"); pos += 2
+        if pos + L_peer > len(payload): return ""
+        _peer = payload[pos:pos+L_peer]; pos += L_peer
+
+        if pos + 64 > len(payload): return ""
+        pos += 64  # static(32) + signing(32)
+
+        if pos + 2 > len(payload): return ""
+        L_nick = int.from_bytes(payload[pos:pos+2], "big"); pos += 2
+        if pos + L_nick > len(payload): return ""
+        nick = safe_utf8(payload[pos:pos+L_nick]); pos += L_nick
+        return nick.strip()
+    except Exception:
+        return ""
+      
+def update_peer_nick(peer_id_hex: str, nickname: str):
+    nickname = (nickname or "").strip()
+    if not nickname:
+        return
+    prev = PEER_NICKS.get(peer_id_hex)
+    if prev != nickname:
+        PEER_NICKS[peer_id_hex] = nickname
+        if prev is None:
+            logging.info(f"👋 Peer appeared: {peer_id_hex} (nick: @{nickname})")
+        else:
+            logging.info(f"🔄 Peer nick updated: {peer_id_hex}: '{prev}' → '{nickname}'")
+
+def safe_utf8(b: bytes) -> str:
+    try:
+        s = b.decode("utf-8")
+        # Filter out non-printables; keep basic punctuation
+        if any(ord(ch) < 0x20 and ch not in "\t\r\n" for ch in s):
+            return ""
+        return s
+    except Exception:
+        return ""
+    
 # ----------------------------
 # Helpers for binary building
 # ----------------------------
@@ -357,7 +601,9 @@ class PeripheralDelegate(NSObject):
         return self
 
     def peripheralManagerDidUpdateState_(self, manager):
+        logging.info(f"Central manager state updated: {manager.state()}")
         if manager.state() == CBManagerStatePoweredOn:
+            logging.info("Scanning for peripherals advertising BitChat service...")
             char_props = CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify
             perms = CBAttributePermissionsReadable | CBAttributePermissionsWriteable
 
@@ -388,12 +634,45 @@ class PeripheralDelegate(NSObject):
                 raw = req.value().bytes().tobytes()
                 pkt = BitchatPacket.from_bytes(raw)
                 if pkt:
-                    logging.info(f"[P] RX {pkt_type_name(pkt.type)} from {peer_hex(pkt.sender_id)} ttl={pkt.ttl} len={len(pkt.payload)}")
+                    sender_hex = hexlify(pkt.sender_id).decode()
+                    logging.info(f"[P] RX {pkt_type_name(pkt.type)} from {sender_hex} ttl={pkt.ttl} len={len(pkt.payload)}")
+
+                    # if pkt.type == MT["announce"]:
+                    #     nick = safe_utf8(pkt.payload).strip()
+                    #     if nick:
+                    #         update_peer_nick(sender_hex, nick)
+                    if pkt.type == MT["announce"]:
+                        nick = pkt.payload.decode("utf-8", "ignore").strip()
+                        sender_hex = hexlify(pkt.sender_id).decode()
+                        if sender_hex != hexlify(MY_PEER_ID).decode():
+                            if nick:
+                                PEER_NICKS[sender_hex] = nick
+                            logging.info(f"👋 Peer appeared: {sender_hex} (nick: {nick or 'unknown'})")
+                        return
+                    
+                    elif pkt.type == MT["message"]:
+                        try:
+                            info = decode_broadcast_message(pkt.payload)
+                            sender_hex = hexlify(pkt.sender_id).decode()
+                            display_name = PEER_NICKS.get(sender_hex, "") or info.get("sender") or sender_hex
+                            text = sanitize_oneline(info.get("content", ""))
+                            mid = info.get("id")
+                            if mid:
+                                logging.info(f"💬 [P] Broadcast {mid} from {display_name} : {text}")
+                            else:
+                                logging.info(f"💬 [P] Broadcast from {display_name} : {text}")
+                        except Exception as e:
+                            logging.info(f"💬 [P] Broadcast (raw hex, decode error: {e}): {hexlify(pkt.payload).decode()}")
+
+                    elif pkt.type == MT["noiseIdentityAnnounce"]:
+                        nick = try_parse_noise_identity_nick(pkt.payload)
+                        if nick:
+                            update_peer_nick(sender_hex, nick)
                 else:
                     logging.info(f"[P] RX undecodable: {hexlify(raw).decode()[:120]}...")
                 manager.respondToRequest_withResult_(req, CBATTErrorSuccess)
 
-                # Echo to subscribers for debugging
+                # (Echo for debug stays the same, or you can remove it if noisy)
                 if self.characteristic:
                     manager.updateValue_forCharacteristic_onSubscribedCentrals_(
                         NSData.dataWithBytes_length_(raw, len(raw)), self.characteristic, None
@@ -421,12 +700,26 @@ class CentralDelegate(NSObject):
             self.mgr.scanForPeripheralsWithServices_options_([SERVICE_UUID], None)
 
     def centralManager_didDiscoverPeripheral_advertisementData_RSSI_(self, manager, peripheral, adv_data, rssi):
-        name = peripheral.name() or "Unknown"
+        name = adv_data.get(CBAdvertisementDataLocalNameKey, peripheral.name() or "Unknown")
         ident = peripheral.identifier().UUIDString()
+        
+        # Proceed to connect only once
         if ident in connected_identifiers:
             return
+
+        # Log one-liner about this advertisement
+        svc_uuids = [u.UUIDString() for u in adv_data.get(CBAdvertisementDataServiceUUIDsKey, [])]
+        if svc_uuids:
+            logging.info(f"{periph_to_str(peripheral)} - Discovered (RSSI: {rssi})  LocalName='{name}'  Services={svc_uuids}")
+
+        # Try to extract a nickname from service data if present
+        svc_data = adv_data.get(CBAdvertisementDataServiceDataKey)
+        nick_from_adv = try_parse_adv_service_nick(svc_data) if svc_data else ""
+        if nick_from_adv:
+            # We don't know the peerID yet from advertising; print what we have
+            logging.info(f"📣 Adv nickname guess for {ident}: '{nick_from_adv}'")
+
         if SERVICE_UUID in adv_data.get(CBAdvertisementDataServiceUUIDsKey, []):
-            logging.info(f"{periph_to_str(peripheral)} - Discovered (RSSI: {rssi})")
             self.peripheral = peripheral
             connected_identifiers.add(ident)
             self.mgr.connectPeripheral_options_(peripheral, None)
@@ -531,13 +824,55 @@ class CentralDelegate(NSObject):
         logging.info(f"[C] RX {typename(pkt.type)} from {hexlify(pkt.sender_id).decode()} ttl={pkt.ttl} len={len(pkt.payload)}")
         logging.info(f"[C] RX {tname} from {sender} ttl={pkt.ttl} len={len(pkt.payload)}")
 
-        # Example: parse VersionAck if received
+        # --- NEW: learn/print nickname from announce ---
+        # if pkt.type == MT["announce"]:
+        #     nick = safe_utf8(pkt.payload).strip()
+        #     if nick:
+        #         update_peer_nick(sender, nick)
+        if pkt.type == MT["announce"]:
+            nick = pkt.payload.decode("utf-8", "ignore").strip()
+            sender_hex = hexlify(pkt.sender_id).decode()
+            if sender_hex != hexlify(MY_PEER_ID).decode():
+                if nick:
+                    PEER_NICKS[sender_hex] = nick
+                logging.info(f"👋 Peer appeared: {sender_hex} (nick: {nick or 'unknown'})")
+            return
+
+        # --- NEW: learn/print nickname from noiseIdentityAnnounce ---
+        elif pkt.type == MT["noiseIdentityAnnounce"]:
+            nick = try_parse_noise_identity_nick(pkt.payload)
+            if nick:
+                update_peer_nick(sender, nick)
+
+        # Keep your existing VersionAck parsing
         if pkt.type == MT["versionAck"]:
             info = parse_version_ack_payload(pkt.payload)
             if info:
                 logging.info(f"[C] VersionAck: {info}")
             else:
                 logging.info("[C] VersionAck: could not parse")
+
+        if pkt.type == MT["message"]:
+            try:
+                info = decode_broadcast_message(pkt.payload)
+                sender_hex = hexlify(pkt.sender_id).decode()
+                # Prefer the nickname we learned from ANNOUNCE; fallback to message sender field; then hex
+                display_name = PEER_NICKS.get(sender_hex) or info.get("sender") or sender_hex
+                text = sanitize_oneline(info.get("content", ""))
+                mid = info.get("id")
+                if mid:
+                    logging.info(f"💬 Broadcast {mid} from @{display_name} : {text}")
+                else:
+                    logging.info(f"💬 Broadcast from {display_name} : {text}")
+            except Exception as e:
+                logging.info(f"💬 Broadcast (raw hex, decode error: {e}): {hexlify(pkt.payload).decode()}")
+            return
+    
+    def peripheral_didUpdateNotificationStateForCharacteristic_error_(self, peripheral, characteristic, error):
+        if error:
+            logging.error(f"Notify state error: {error.localizedDescription()}")
+        else:
+            logging.info(f"Notify {'ENABLED' if characteristic.isNotifying() else 'DISABLED'} for {characteristic.UUID().UUIDString()}")
 
 # ----------------------------
 # Main
