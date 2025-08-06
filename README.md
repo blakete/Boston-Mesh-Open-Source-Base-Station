@@ -1,4 +1,4 @@
-## Open BitChat Meshstation – Open Source BitChat Relay & Base Station
+## Open BitChat Mesh Station – Open Source BitChat Relay & Base Station
 
 Open Source 🛠️  Decentralized 🌐  Encrypted 🔐  Uncensorable 🗣️  Unstoppable 🚀
 
