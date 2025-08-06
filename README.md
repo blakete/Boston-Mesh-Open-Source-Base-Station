@@ -23,3 +23,10 @@ Build a **cheap, open-source** BitChat base station & relay to extend peer disco
 - **Backhaul**: the Meshstation leverages **P2P radio** and **Internet infrastructure** to join and maintain the wider mesh network.
 
 ---
+
+## References
+- **BitChat Whitepaper** – https://github.com/permissionlesstech/bitchat/blob/main/WHITEPAPER.md  
+- **BitChat for iOS** – https://github.com/permissionlesstech/bitchat  
+- **BitChat for Android (Kotlin)** – https://github.com/permissionlesstech/bitchat-android  
+- **Noise Protocol Framework** – https://www.noiseprotocol.org/
+  
