@@ -1,0 +1,72 @@
+[2025-08-05 23:18:05,503] [INFO] - Central manager state updated: 5
+[2025-08-05 23:18:05,503] [INFO] - Scanning for peripherals with services...
+[2025-08-05 23:18:05,558] [INFO] - <CBPeripheral identifier = 67D447C3-F3EB-9ACA-4B52-020AB38F406F, state = 0, name = ENVY Photo 7800 series> - Discovered peripheral
+[2025-08-05 23:18:05,586] [INFO] - <CBPeripheral identifier = 32581976-6DAE-BC6D-7434-D56D197FD24A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,593] [INFO] - <CBPeripheral identifier = E5701387-82E3-0911-1FB2-A74FE4300E35, state = 0, name = Blake’s iPad> - Discovered peripheral
+[2025-08-05 23:18:05,596] [INFO] - <CBPeripheral identifier = DFC4B95F-99CE-0AEE-F3E2-2B78248BA96B, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,596] [INFO] - <CBPeripheral identifier = 570080D1-5188-7CF6-0BEE-38765C9399F1, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,606] [INFO] - <CBPeripheral identifier = 40A13DA2-FD23-C175-4357-C7A8C30AC6BD, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,843] [INFO] - <CBPeripheral identifier = DA250B9E-3DD7-418F-2BE4-5AAB532FD603, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,883] [INFO] - <CBPeripheral identifier = 0620B61B-0848-4AA1-0263-60FF2D5EE6D0, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:05,887] [INFO] - <CBPeripheral identifier = 5971E040-E000-17BE-0453-E9B86A0B9F83, state = 0, name = TT> - Discovered peripheral
+[2025-08-05 23:18:06,146] [INFO] - <CBPeripheral identifier = F9863D9D-3DB0-2DD0-DEEC-3D3AA95E23AD, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:06,148] [INFO] - <CBPeripheral identifier = C3CDCCA0-6812-E4C9-4414-BA3C76B04D9B, state = 0, name = Govee_H6076_044B> - Discovered peripheral
+[2025-08-05 23:18:06,154] [INFO] - <CBPeripheral identifier = 511A202F-3066-ECDD-0D4E-6B40409979B9, state = 0, name = Govee_H6076_6E4E> - Discovered peripheral
+[2025-08-05 23:18:06,176] [INFO] - <CBPeripheral identifier = B661DC58-446D-93BF-BE5F-87D7BE2F3E03, state = 0, name = LE-BLACK MAGIC> - Discovered peripheral
+[2025-08-05 23:18:06,209] [INFO] - <CBPeripheral identifier = E44B0EF5-4E5B-0D3D-4A98-6BC4F9A8AC18, state = 0, name = Quest 3> - Discovered peripheral
+[2025-08-05 23:18:06,444] [INFO] - <CBPeripheral identifier = EB7E9DB6-E0FC-5A23-03AB-3C79D5680886, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:06,795] [INFO] - <CBPeripheral identifier = 40C804F3-AFF3-ECA3-CF27-DD7D0B657D2A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:06,804] [INFO] - <CBPeripheral identifier = F089A3F4-FE19-BD08-69EB-12058FD0E54A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:07,065] [INFO] - <CBPeripheral identifier = 6DEFB42E-7914-FBD0-0D05-613E805F3A57, state = 0, name = N07ET> - Discovered peripheral
+[2025-08-05 23:18:07,359] [INFO] - <CBPeripheral identifier = 668F4D03-B9B9-C4AA-EE37-CB4687203ACD, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:07,362] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 0, name = Blake iPhone> - Discovered peripheral
+[2025-08-05 23:18:07,666] [INFO] - <CBPeripheral identifier = FCFDF6A9-4DF4-0A6E-C8FA-8ABD308B9B10, state = 0, name = Core200S> - Discovered peripheral
+[2025-08-05 23:18:07,696] [INFO] - <CBPeripheral identifier = 5C394C89-EAF8-4117-DA4E-41BA58F1340A, state = 0, name = N02Z0> - Discovered peripheral
+[2025-08-05 23:18:07,706] [INFO] - <CBPeripheral identifier = 20B7D0E0-8D12-295C-99C6-90820C43AA30, state = 0, name = Blake’s Apple Watch> - Discovered peripheral
+[2025-08-05 23:18:07,950] [INFO] - <CBPeripheral identifier = 123B0EF4-0E2A-10F4-BB40-CFC40C39E42E, state = 0, name = GVH71736A91> - Discovered peripheral
+[2025-08-05 23:18:07,986] [INFO] - <CBPeripheral identifier = BDA07D14-E4FB-AED0-5A7A-B0D8E4EFA9C6, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:08,077] [INFO] - <CBPeripheral identifier = 06AD159C-0856-B048-21DB-7F8BF2470EA2, state = 0, name = [TV] Samsung TU690T 50 TV> - Discovered peripheral
+[2025-08-05 23:18:08,665] [INFO] - <CBPeripheral identifier = 0F350B27-0C78-2EBE-4B46-A778E19A3CF5, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:08,982] [INFO] - <CBPeripheral identifier = CD13D62B-7C33-D64B-B7BE-A4A5863E9907, state = 0, name = C by GE> - Discovered peripheral
+[2025-08-05 23:18:09,915] [INFO] - <CBPeripheral identifier = 2510967C-F357-7A15-DBD6-858AC29E6FA7, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:10,176] [INFO] - <CBPeripheral identifier = 2AF0D0AC-AF6D-51F1-6611-FB3A666F4EF9, state = 0, name = SB1PD68D> - Discovered peripheral
+[2025-08-05 23:18:10,215] [INFO] - <CBPeripheral identifier = 4EC7A2F3-231B-3E6B-3852-F115EA95B96C, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:13,182] [INFO] - <CBPeripheral identifier = 62BC00A0-4588-D44B-0EDE-363F19F1EAF1, state = 0, name = N010M> - Discovered peripheral
+[2025-08-05 23:18:13,464] [INFO] - <CBPeripheral identifier = 67C26854-44C1-17C8-7F10-67E0DF8ED224, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:14,982] [INFO] - <CBPeripheral identifier = C665CC09-BB8A-2C2D-A9C2-C385C9850166, state = 0, name = Govee_H6056_2843> - Discovered peripheral
+[2025-08-05 23:18:17,366] [INFO] - <CBPeripheral identifier = 8F96C877-362A-CBC4-9D48-2C7ED780F922, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:18,561] [INFO] - <CBPeripheral identifier = 50A797ED-C8DA-3AD7-A378-629A058398C3, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:19,159] [INFO] - <CBPeripheral identifier = 35D3834D-4B42-80C7-0D41-CA839969D77D, state = 0, name = SENSE4BA357> - Discovered peripheral
+[2025-08-05 23:18:19,479] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 0, name = Blake iPhone> - Connecting to peripheral with services (RSSI: -34)
+[2025-08-05 23:18:19,958] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Connected to peripheral
+[2025-08-05 23:18:19,959] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Discovering peripheral's services
+[2025-08-05 23:18:20,408] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Discovered 6 services: ['180A', 'D0611E78-BBB4-4591-A5F8-487910AE4366', '9FA480E0-4967-4542-9390-D343DC5D04AE', '180F', '1805', 'F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C']
+[2025-08-05 23:18:20,408] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - BITCHAT SERVICE FOUND - Discovering service characteristics...
+[2025-08-05 23:18:20,428] [INFO] - <CBPeripheral identifier = 9ABCE135-4681-4772-DF4D-F602A630D8FA, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:20,526] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Discovered 1 characteristics for service F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C: ['A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D']
+[2025-08-05 23:18:20,527] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - BITCHAT SERVICE CHARACTERISTIC FOUND
+[2025-08-05 23:18:20,528] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Sent ANNOUNCE payload
+[2025-08-05 23:18:20,529] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Sent NOISE_IDENTITY_ANNOUNCE
+[2025-08-05 23:18:22,227] [INFO] - <CBPeripheral identifier = A60EFFD5-0E3C-00A8-F5A4-7D364CA2D07C, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:22,869] [INFO] - <CBPeripheral identifier = E70BDA21-FA16-5E44-E4A6-7829ECC138C3, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:22,879] [INFO] - <CBPeripheral identifier = F407E7E1-F8AB-B94F-D236-BC484B4AF07A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:22,896] [INFO] - <CBPeripheral identifier = 28DCC82C-BDB7-6CFE-5E56-27F19CB5F11F, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:18:22,988] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Received notification: 010406000001987d6317a3010059483e946d7d610c75ffffffffffffffff10000001987d6317a32435424534423937322d423630312d343833412d424338302d3736463730443337434639360b68656c6c6f5f776f726c64000c74657374206d6573736167651034383365393436643764363130633735815bd37ea100f62846483fe8ffec3ca29fb86b528a752a0f83cac60c26ad82f1933293552f519810f0438e4003945aaa1bef6687be033aedeab3835a25f70e7ff6c23bccd4f3e63d8bde133efb175d9106e031e26d14ac6aea8c4c6a3eb4e16634611a4bca15959297f9c8808c661cf779ca983954c9c2c8b4ab8c21fc844d3fbda3d8bcd7c7fa5189
+[2025-08-05 23:18:22,989] [INFO] - Parsing: version=1 at pos=1
+[2025-08-05 23:18:22,989] [INFO] - Parsing: type=4 at pos=2
+[2025-08-05 23:18:22,989] [INFO] - Parsing: senderID=06000001987d6317 at pos=10
+[2025-08-05 23:18:22,989] [INFO] - Parsing: recipientID=a3010059483e946d at pos=18
+[2025-08-05 23:18:22,989] [INFO] - Parsing: timestamp=9034516028427599871 at pos=26
+[2025-08-05 23:18:22,989] [INFO] - Parsing: ttl=255 at pos=27
+[2025-08-05 23:18:22,989] [INFO] - Parsing: payload_len=65535 at pos=29
+[2025-08-05 23:18:22,990] [ERROR] - Parsing failed: payload_len exceeds data length
+[2025-08-05 23:18:22,990] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake iPhone> - Failed to parse received packet - attempting alternative parse
+[2025-08-05 23:18:22,990] [INFO] - Parsing: version=152 at pos=1
+[2025-08-05 23:18:22,990] [INFO] - Parsing: type=125 at pos=2
+[2025-08-05 23:18:22,990] [INFO] - Parsing: senderID=6317a3010059483e at pos=10
+[2025-08-05 23:18:22,990] [INFO] - Parsing: recipientID=946d7d610c75ffff at pos=18
+[2025-08-05 23:18:22,990] [INFO] - Parsing: timestamp=18446744073709490176 at pos=26
+[2025-08-05 23:18:22,990] [INFO] - Parsing: ttl=0 at pos=27
+[2025-08-05 23:18:22,990] [INFO] - Parsing: payload_len=408 at pos=29
+[2025-08-05 23:18:22,990] [ERROR] - Parsing failed: payload_len exceeds data length
+[2025-08-05 23:18:24,045] [INFO] - <CBPeripheral identifier = B3F79822-2818-0CB2-3BFD-EEE4BFA278DE, state = 0, name = Unknown> - Discovered peripheral

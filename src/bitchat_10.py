@@ -1,6 +1,7 @@
 import threading
 import time
 import random
+import logging
 from binascii import hexlify
 from cryptography.hazmat.primitives.asymmetric import ed25519  # For future signing; not used yet
 import signal
@@ -9,11 +10,31 @@ from datetime import datetime
 # pyobjc imports with type: ignore to suppress Pylance errors
 import objc  # type: ignore
 from Foundation import NSObject, NSData, NSRunLoop, NSDate  # type: ignore
-from CoreBluetooth import (CBCentralManager, CBPeripheral, CBPeripheralManager, CBManagerStatePoweredOn,
-                          CBUUID, CBMutableCharacteristic, CBMutableService, CBMutableDescriptor, CBCharacteristicPropertyRead,
-                          CBCharacteristicPropertyWrite, CBCharacteristicPropertyNotify, CBAttributePermissionsReadable,
+from CoreBluetooth import (CBCentralManager, CBPeripheral, CBPeripheralManager, CBManagerStatePoweredOn,  # type: ignore
+                          CBUUID, CBMutableCharacteristic, CBMutableService, CBMutableDescriptor, CBCharacteristicPropertyRead,  # type: ignore
+                          CBCharacteristicPropertyWrite, CBCharacteristicPropertyNotify, CBAttributePermissionsReadable,  # type: ignore
                           CBAttributePermissionsWriteable, CBATTErrorSuccess, CBAdvertisementDataServiceUUIDsKey, CBAdvertisementDataLocalNameKey)  # type: ignore
-from PyObjCTools import AppHelper  # type: ignore
+from PyObjCTools import AppHelper
+
+
+# def log(message):
+#     print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')} {message}", flush=True)
+    
+# Simplified log format (no class name)
+LOG_FORMAT = (
+    "[%(asctime)s] "
+    "[%(levelname)s] "
+    # "[%(threadName)s] "
+    # "[Module: %(module)s] "
+    # "[Function: %(funcName)s] "
+    "- %(message)s"
+)
+
+# Set up logger
+logging.basicConfig(
+    level=logging.DEBUG,
+    format=LOG_FORMAT
+)
 
 # BitChat UUIDs and constants
 SERVICE_UUID_STR = "F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C"
@@ -30,9 +51,20 @@ BROADCAST_RECIPIENT = b'\xff' * 8  # SpecialRecipients.BROADCAST
 
 connected_identifiers = set()  # To avoid multiple connections to the same peripheral
 
-def log(message):
-    print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')} {message}", flush=True)
+def peripheral_to_dict(peripheral):
+    return {
+        "ID": peripheral.identifier,
+        "state": peripheral.state(),
+        "name": peripheral.name() or "Unknown"
+    }
 
+def peripheral_to_str(peripheral: CBPeripheral):
+    identifier = peripheral.identifier().UUIDString()
+    state = peripheral.state()
+    name = peripheral.name() or "Unknown"
+    # return f"<CBPeripheral identifier = {identifier}, state = {state}, name = {name}>"
+    return f"<{identifier}, {state}, {name}>"
+    
 class BitchatPacket:
     def __init__(self, version=1, packet_type=1, senderID=b'\0'*8, recipientID=BROADCAST_RECIPIENT, timestamp=0, payload=b'', signature=b'', ttl=7):
         self.version = version
@@ -64,42 +96,42 @@ class BitchatPacket:
             pos = 0
             version = int.from_bytes(data[pos:pos+1], 'big')
             pos += 1
-            log(f"Parsing: version={version} at pos={pos}")
+            logging.info(f"Parsing: version={version} at pos={pos}")
             packet_type = int.from_bytes(data[pos:pos+1], 'big')
             pos += 1
-            log(f"Parsing: type={packet_type} at pos={pos}")
+            logging.info(f"Parsing: type={packet_type} at pos={pos}")
             senderID = data[pos:pos+8]
             pos += 8
-            log(f"Parsing: senderID={hexlify(senderID).decode()} at pos={pos}")
+            logging.info(f"Parsing: senderID={hexlify(senderID).decode()} at pos={pos}")
             recipientID = data[pos:pos+8]
             pos += 8
-            log(f"Parsing: recipientID={hexlify(recipientID).decode()} at pos={pos}")
+            logging.info(f"Parsing: recipientID={hexlify(recipientID).decode()} at pos={pos}")
             timestamp = int.from_bytes(data[pos:pos+8], 'big')
             pos += 8
-            log(f"Parsing: timestamp={timestamp} at pos={pos}")
+            logging.info(f"Parsing: timestamp={timestamp} at pos={pos}")
             ttl = int.from_bytes(data[pos:pos+1], 'big')
             pos += 1
-            log(f"Parsing: ttl={ttl} at pos={pos}")
+            logging.info(f"Parsing: ttl={ttl} at pos={pos}")
             payload_len = int.from_bytes(data[pos:pos+2], 'big')
             pos += 2
-            log(f"Parsing: payload_len={payload_len} at pos={pos}")
+            logging.info(f"Parsing: payload_len={payload_len} at pos={pos}")
             if pos + payload_len > len(data):
-                log("Parsing failed: payload_len exceeds data length")
+                logging.error("Parsing failed: payload_len exceeds data length")
                 return None
             payload = data[pos:pos+payload_len]
             pos += payload_len
             sig_len = int.from_bytes(data[pos:pos+2], 'big')
             pos += 2
-            log(f"Parsing: sig_len={sig_len} at pos={pos}")
+            logging.info(f"Parsing: sig_len={sig_len} at pos={pos}")
             if pos + sig_len > len(data):
-                log("Parsing failed: sig_len exceeds data length")
+                logging.error("Parsing failed: sig_len exceeds data length")
                 return None
             signature = data[pos:pos+sig_len]
             if pos + sig_len != len(data):
-                log(f"Parsing warning: extra bytes after signature: {len(data) - (pos + sig_len)}")
+                logging.warning(f"Parsing warning: extra bytes after signature: {len(data) - (pos + sig_len)}")
             return cls(version, packet_type, senderID, recipientID, timestamp, payload, signature, ttl)
         except Exception as e:
-            log(f"Parsing error: {str(e)} at pos={pos}")
+            logging.error(f"Parsing error: {str(e)} at pos={pos}")
             return None
 
 class PeripheralDelegate(NSObject):
@@ -111,7 +143,7 @@ class PeripheralDelegate(NSObject):
 
     def peripheralManagerDidUpdateState_(self, manager):
         if manager.state() == CBManagerStatePoweredOn:
-            log("Peripheral powered on")
+            # logging.info("Peripheral powered on")
             self.characteristic = CBMutableCharacteristic.alloc().initWithType_properties_value_permissions_(
                 CHAR_UUID,
                 CBCharacteristicPropertyRead | CBCharacteristicPropertyWrite | CBCharacteristicPropertyNotify,
@@ -129,9 +161,9 @@ class PeripheralDelegate(NSObject):
 
     def peripheralManager_didAddService_error_(self, manager, service, error):
         if error:
-            log(f"Error adding service: {error.localizedDescription()}")
+            logging.error(f"Error adding service: {error.localizedDescription()}")
             return
-        log("Service added; starting advertising")
+        logging.info("Service added; starting advertising")
         adv_data = {CBAdvertisementDataLocalNameKey: "BitChatMac", CBAdvertisementDataServiceUUIDsKey: [SERVICE_UUID]}
         manager.startAdvertising_(adv_data)
 
@@ -140,30 +172,30 @@ class PeripheralDelegate(NSObject):
             for request in requests:
                 data = request.value().bytes().tobytes()
                 hex_data = hexlify(data).decode()
-                log(f"Received write: {hex_data}")
+                logging.info(f"Received write: {hex_data}")
                 packet = BitchatPacket.from_binary(data)
                 if packet:
                     hex_sender = hexlify(packet.senderID).decode()
                     hex_payload = hexlify(packet.payload).decode()
-                    log(f"Parsed packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
+                    logging.info(f"Parsed packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
                     if packet.packet_type == 1:  # ANNOUNCE
                         nickname = packet.payload.decode('utf-8', 'ignore')
-                        log(f"ANNOUNCE from peerID {hex_sender} with nickname {nickname}")
+                        logging.info(f"ANNOUNCE from peerID {hex_sender} with nickname {nickname}")
                         # Add peer logic here
                     elif packet.packet_type == 2:  # MESSAGE
                         self.parse_message(packet.payload)
                     elif packet.packet_type == 4:  # FRAGMENT (stub)
-                        log("Received FRAGMENT packet - handle reassembly")
+                        logging.info("Received FRAGMENT packet - handle reassembly")
                 else:
-                    log("Failed to parse received packet")
+                    logging.error("Failed to parse received packet")
                 manager.respondToRequest_withResult_(request, CBATTErrorSuccess)
                 if self.characteristic:
                     manager.updateValue_forCharacteristic_onSubscribedCentrals_(NSData.dataWithBytes_length_(data, len(data)), self.characteristic, None)
         except Exception as e:
-            log(f"Error in write handler: {str(e)}")
+            logging.error(f"Error in write handler: {str(e)}")
 
     def peripheralManager_central_didSubscribeToCharacteristic_(self, manager, central, characteristic):
-        log("Central subscribed")
+        logging.info("Central subscribed")
 
     def parse_message(self, payload):
         try:
@@ -207,9 +239,9 @@ class PeripheralDelegate(NSObject):
                 ment = payload[pos:pos+ment_len].decode('utf-8')
                 pos += ment_len
                 mentions.append(ment)
-            log(f"Decoded MESSAGE: sender={sender}, content={content}, timestamp={timestamp}, isRelay={isRelay}, senderPeerID={senderPeerID}, isPrivate={isPrivate}, recipient={recipientNickname}, channel={channel}, mentions={mentions}")
+            logging.info(f"Decoded MESSAGE: sender={sender}, content={content}, timestamp={timestamp}, isRelay={isRelay}, senderPeerID={senderPeerID}, isPrivate={isPrivate}, recipient={recipientNickname}, channel={channel}, mentions={mentions}")
         except Exception as e:
-            log(f"Error parsing MESSAGE: {str(e)}")
+            logging.error(f"Error parsing MESSAGE: {str(e)}")
 
 class CentralDelegate(NSObject):
     def init(self):
@@ -217,76 +249,98 @@ class CentralDelegate(NSObject):
         self.manager = CBCentralManager.alloc().initWithDelegate_queue_(self, None)
         self.peripheral = None
         self.characteristic = None
+        self.known_peripherals = {}
         return self
 
     def centralManagerDidUpdateState_(self, manager):
-        log(f"Central manager state updated: {manager.state()}")
+        logging.info(f"Central manager state updated: {manager.state()}")
         if manager.state() == CBManagerStatePoweredOn:
-            log("Central powered on; scanning")
-            manager.scanForPeripheralsWithServices_options_([SERVICE_UUID], None)
+            # logging.info("Central powered on")
+            logging.info("Scanning for peripherals with services...")
+            # manager.scanForPeripheralsWithServices_options_([SERVICE_UUID], None)
+            manager.scanForPeripheralsWithServices_options_([], None)
         else:
-            log(f"Central state not powered on: {manager.state()}")
+            logging.warning(f"Central state not powered on: {manager.state()}")
 
     def centralManager_didDiscoverPeripheral_advertisementData_RSSI_(self, manager, peripheral, adv_data, rssi):
         identifier = peripheral.identifier().UUIDString()
+        
         if identifier in connected_identifiers:
             return
-        if SERVICE_UUID in adv_data.get(CBAdvertisementDataServiceUUIDsKey, []):
-            log(f"Discovered peer: {peripheral.name()} with RSSI: {rssi} ID: {identifier}")
-            self.peripheral = peripheral
-            manager.connectPeripheral_options_(peripheral, None)
-        else:
-            log(f"Discovered non-BitChat peripheral: {peripheral.name()}")
+        
+        if identifier not in self.known_peripherals.keys():
+            self.known_peripherals[identifier] = peripheral_to_dict(peripheral)
+            self.known_peripherals[identifier]["state"] = "discovered"
+            # logging.info(f"{peripheral_to_str(peripheral)} - Discovered peripheral")
+            if self.known_peripherals[identifier]['name'] == "Blake iPhone":
+                logging.info(f"{peripheral_to_str(peripheral)} - Discovered peripheral")
+        
+        if identifier in self.known_peripherals.keys() and self.known_peripherals[identifier]["state"] == "discovered":
+            if SERVICE_UUID in adv_data.get(CBAdvertisementDataServiceUUIDsKey, []):
+                logging.info(f"{peripheral_to_str(peripheral)} - Connecting to peripheral with services (RSSI: {rssi})")
+                self.known_peripherals[identifier]["state"] = "connecting"
+                self.peripheral = peripheral
+                manager.connectPeripheral_options_(peripheral, None)
 
     def centralManager_didConnectPeripheral_(self, manager, peripheral):
         identifier = peripheral.identifier().UUIDString()
-        connected_identifiers.add(identifier)
-        log(f"Connected to {peripheral.name()} ID: {identifier}")
-        peripheral.setDelegate_(self)
-        peripheral.discoverServices_([SERVICE_UUID])
+        if identifier in self.known_peripherals.keys() and self.known_peripherals[identifier]["state"] != "connected":
+            logging.info(f"{peripheral_to_str(peripheral)} - Connected to peripheral")
+            self.known_peripherals[identifier]["state"] = "connected"
+            connected_identifiers.add(identifier)
+            peripheral.setDelegate_(self)
+            # peripheral.discoverServices_([SERVICE_UUID])
+            logging.info(f"{peripheral_to_str(peripheral)} - Discovering peripheral's services")
+            peripheral.discoverServices_([])
 
     def centralManager_didFailToConnectPeripheral_error_(self, manager, peripheral, error):
-        log(f"Failed to connect to {peripheral.name()}: {error.localizedDescription() if error else 'Unknown error'}")
+        identifier = peripheral.identifier().UUIDString()
+        logging.error(f"{peripheral_to_str(peripheral)} - Failed to connect to peripheral - Error: {error.localizedDescription() if error else 'Unknown error'}")
+        self.known_peripherals[identifier]["state"] = "failed to connect"
 
     def centralManager_didDisconnectPeripheral_error_(self, manager, peripheral, error):
         identifier = peripheral.identifier().UUIDString()
+        self.known_peripherals[identifier]["state"] = "disconnected"
         connected_identifiers.remove(identifier) if identifier in connected_identifiers else None
-        log(f"Disconnected from {peripheral.name()}: {error.localizedDescription() if error else 'Unknown error'}")
+        logging.info(f"{peripheral_to_str(peripheral)} - Disconnected from peripheral: {error.localizedDescription() if error else 'Unknown error'}")
         # Restart scanning
         manager.scanForPeripheralsWithServices_options_([SERVICE_UUID], None)
 
     def peripheral_didDiscoverServices_(self, peripheral, error):
         if error:
-            log(f"Error discovering services: {error.localizedDescription()}")
+            logging.error(f"Error discovering services: {error.localizedDescription()}")
             return
         services = peripheral.services()
         service_uuids = [s.UUID().UUIDString() for s in services]
-        log(f"Discovered {len(services)} services: {service_uuids}")
         if not services:
-            log("No services discovered - disconnecting")
+            logging.info("{peripheral_to_str(peripheral)} - No services discovered - disconnecting")
             peripheral.delegate().manager.cancelPeripheralConnection_(peripheral)
             return
+        # logging.info(f"{peripheral_to_str(peripheral)} - Discovered {len(services)} services: {service_uuids}")
+        logging.info(f"{peripheral_to_str(peripheral)} - Discovered {len(services)} services: {service_uuids}")
         service = next((s for s in services if s.UUID() == SERVICE_UUID), None)
         if not service:
-            log("BitChat service not found - disconnecting")
+            logging.info(f"{peripheral_to_str(peripheral)} - BitChat service not found - disconnecting!")
             peripheral.delegate().manager.cancelPeripheralConnection_(peripheral)
             return
+        logging.info(f"{peripheral_to_str(peripheral)} - BITCHAT SERVICE FOUND - Discovering service characteristics...")
         peripheral.discoverCharacteristics_forService_([CHAR_UUID], service)
 
     def peripheral_didDiscoverCharacteristicsForService_error_(self, peripheral, service, error):
         if error:
-            log(f"Error discovering characteristics: {error.localizedDescription()}")
+            logging.error(f"{peripheral_to_str(peripheral)} - Error discovering characteristics: {error.localizedDescription()}")
             return
         chars = service.characteristics()
         char_uuids = [c.UUID().UUIDString() for c in chars]
-        log(f"Discovered {len(chars)} characteristics for service {service.UUID().UUIDString()}: {char_uuids}")
+        logging.info(f"{peripheral_to_str(peripheral)} - Discovered {len(chars)} characteristics for service {service.UUID().UUIDString()}: {char_uuids}")
         if not chars:
-            log("No characteristics discovered")
+            logging.info(f"{peripheral_to_str(peripheral)} - No service characteristics discovered")
             return
         self.characteristic = next((c for c in chars if c.UUID() == CHAR_UUID), None)
         if not self.characteristic:
-            log("BitChat characteristic not found")
+            logging.info(f"{peripheral_to_str(peripheral)} - BitChat characteristic not found")
             return
+        logging.info(f"{peripheral_to_str(peripheral)} - BITCHAT SERVICE CHARACTERISTIC FOUND")
         peripheral.setNotifyValue_forCharacteristic_(True, self.characteristic)
         # Send ANNOUNCE
         timestamp = int(time.time() * 1000)
@@ -294,50 +348,50 @@ class CentralDelegate(NSObject):
         packet = BitchatPacket(packet_type=1, senderID=sender_id, recipientID=BROADCAST_RECIPIENT, timestamp=timestamp, payload=MY_NICKNAME, ttl=7)
         announce_data = NSData.dataWithBytes_length_(packet.to_binary(), len(packet.to_binary()))
         peripheral.writeValue_forCharacteristic_type_(announce_data, self.characteristic, 1)  # With response
-        log("Sent ANNOUNCE payload")
+        logging.info(f"{peripheral_to_str(peripheral)} - Sent ANNOUNCE payload")
         # Send NOISE_IDENTITY_ANNOUNCE
         noise_payload = create_noise_identity_announcement()
         noise_packet = BitchatPacket(packet_type=3, senderID=sender_id, recipientID=BROADCAST_RECIPIENT, timestamp=timestamp, payload=noise_payload, ttl=7)
         noise_data = NSData.dataWithBytes_length_(noise_packet.to_binary(), len(noise_packet.to_binary()))
         peripheral.writeValue_forCharacteristic_type_(noise_data, self.characteristic, 1)
-        log("Sent NOISE_IDENTITY_ANNOUNCE")
+        logging.info(f"{peripheral_to_str(peripheral)} - Sent NOISE_IDENTITY_ANNOUNCE")
 
     def peripheral_didUpdateValueForCharacteristic_error_(self, peripheral, characteristic, error):
         try:
             if error:
-                log(f"Error updating value: {error.localizedDescription()}")
+                logging.error(f"{peripheral_to_str(peripheral)} - Error updating value: {error.localizedDescription()}")
                 return
-            data = characteristic.value().bytes().tobytes()
-            hex_data = hexlify(data).decode()
-            log(f"Received notification: {hex_data}")
-            packet = BitchatPacket.from_binary(data)
+            received_bytes = characteristic.value().bytes().tobytes()
+            hex_data = hexlify(received_bytes).decode()
+            logging.info(f"{peripheral_to_str(peripheral)} - Received data: {hex_data}")
+            packet = BitchatPacket.from_binary(received_bytes)
             if packet:
                 hex_sender = hexlify(packet.senderID).decode()
                 hex_payload = hexlify(packet.payload).decode()
-                log(f"Parsed packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
+                logging.info(f"{peripheral_to_str(peripheral)} - Parsed packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
                 if packet.packet_type == 1:  # ANNOUNCE
                     nickname = packet.payload.decode('utf-8', 'ignore')
-                    log(f"ANNOUNCE from peerID {hex_sender} with nickname {nickname}")
+                    logging.info(f"{peripheral_to_str(peripheral)} - ANNOUNCE from peerID {hex_sender} with nickname {nickname}")
                     # Add peer logic here
                 elif packet.packet_type == 2:  # MESSAGE
                     self.parse_message(packet.payload)
                 elif packet.packet_type == 4:  # FRAGMENT (stub)
-                    log("Received FRAGMENT packet - handle reassembly")
+                    logging.info(f"{peripheral_to_str(peripheral)} - Received FRAGMENT packet - handle reassembly")
                 elif packet.packet_type == 3:  # NOISE_IDENTITY_ANNOUNCE
-                    log("Received NOISE_IDENTITY_ANNOUNCE - initiating handshake")
+                    logging.info(f"{peripheral_to_str(peripheral)} - Received NOISE_IDENTITY_ANNOUNCE - initiating handshake")
                     timestamp = int(time.time() * 1000)
                     sender_id = bytes.fromhex(MY_PEER_ID)
                     handshake_packet = BitchatPacket(packet_type=5, senderID=sender_id, recipientID=packet.senderID, timestamp=timestamp, payload=bytes(32), ttl=7)  # Stub 32 byte handshake
                     handshake_data = NSData.dataWithBytes_length_(handshake_packet.to_binary(), len(handshake_packet.to_binary()))
                     peripheral.writeValue_forCharacteristic_type_(handshake_data, characteristic, 1)
-                    log("Responded with NOISE_HANDSHAKE_INIT")
+                    logging.info(f"{peripheral_to_str(peripheral)} - Responded with NOISE_HANDSHAKE_INIT")
                 elif packet.packet_type == 6:  # NOISE_HANDSHAKE_RESP
-                    log("Received NOISE_HANDSHAKE_RESP - session established")
+                    logging.info(f"{peripheral_to_str(peripheral)} - Received NOISE_HANDSHAKE_RESP - session established")
             else:
-                log("Failed to parse received packet - attempting alternative parse")
-                self.alternative_parse(data)
+                logging.info(f"{peripheral_to_str(peripheral)} - Failed to parse received packet - attempting alternative parse")
+                self.alternative_parse(received_bytes)
         except Exception as e:
-            log(f"Error in update value handler: {str(e)}")
+            logging.error(f"{peripheral_to_str(peripheral)} - Error in update value handler: {str(e)}")
 
     def parse_message(self, payload):
         try:
@@ -381,29 +435,32 @@ class CentralDelegate(NSObject):
                 ment = payload[pos:pos+ment_len].decode('utf-8')
                 pos += ment_len
                 mentions.append(ment)
-            log(f"Decoded MESSAGE: sender={sender}, content={content}, timestamp={timestamp}, isRelay={isRelay}, senderPeerID={senderPeerID}, isPrivate={isPrivate}, recipient={recipientNickname}, channel={channel}, mentions={mentions}")
+            logging.info(f"Decoded MESSAGE: sender={sender}, content={content}, timestamp={timestamp}, isRelay={isRelay}, senderPeerID={senderPeerID}, isPrivate={isPrivate}, recipient={recipientNickname}, channel={channel}, mentions={mentions}")
         except Exception as e:
-            log(f"Error parsing MESSAGE: {str(e)}")
+            logging.error(f"Error parsing MESSAGE: {str(e)}")
 
     def alternative_parse(self, data):
         try:
             # Try to find 'blake' or 'd' in the data
             if b'blake' in data:
                 pos = data.find(b'blake')
-                log(f"Found 'blake' at position {pos}")
-            if b'd' in data:
-                pos = data.find(b'd')
-                log(f"Found 'd' at position {pos}")
+                logging.info(f"Found 'blake' at position {pos}")
+            if b'81ake' in data:
+                pos = data.find(b'81ake')
+                logging.info(f"Found '81ake' at position {pos}")
+            # if b'd' in data:
+            #     pos = data.find(b'd')
+            #     logging.info(f"Found 'd' at position {pos}")
             # Stub for fragment or other
             inner = data[6:]  # Skip potential header
             packet = BitchatPacket.from_binary(inner)
             if packet:
-                log("Alternative parse succeeded")
+                logging.info("Alternative parse succeeded")
                 hex_sender = hexlify(packet.senderID).decode()
                 hex_payload = hexlify(packet.payload).decode()
-                log(f"Parsed alternative packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
+                logging.info(f"Parsed alternative packet: type={packet.packet_type}, senderID={hex_sender}, ttl={packet.ttl}, payload={hex_payload}")
         except Exception as e:
-            log(f"Error in alternative parse: {str(e)}")
+            logging.error(f"Error in alternative parse: {str(e)}")
 
 def create_noise_identity_announcement():
     # Stub implementation based on original code
@@ -422,7 +479,7 @@ running = True
 def signal_handler(sig, frame):
     global running
     running = False
-    log("Ctrl+C received, shutting down")
+    logging.info("Ctrl+C received, shutting down")
     AppHelper.stopEventLoop()
 
 signal.signal(signal.SIGINT, signal_handler)

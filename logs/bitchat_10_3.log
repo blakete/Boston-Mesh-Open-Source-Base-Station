@@ -1,0 +1,184 @@
+[2025-08-05 20:58:08,690] [INFO] [Thread: MainThread] - Central manager state updated: 5
+[2025-08-05 20:58:08,690] [INFO] [Thread: MainThread] - Central powered on; scanning
+[2025-08-05 20:58:09,642] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:11,182] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,184] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,184] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,458] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,458] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,782] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:11,881] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,049] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,051] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,081] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,082] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,123] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,125] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:12,126] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:12,228] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,301] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,303] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,441] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,442] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,481] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,481] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: 'B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, Name: Blake's iPhone, State: 0
+[2025-08-05 20:58:12,680] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,681] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,741] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -32 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,769] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -32 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,840] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,947] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,948] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,951] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:12,987] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:12,989] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:13,024] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:13,024] [INFO] [Thread: MainThread] - Discovered peer: Blake's iPhone with RSSI: -31 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:13,157] [INFO] [Thread: MainThread] - Connected to Blake's iPhone ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+[2025-08-05 20:58:13,228] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:13,668] [INFO] [Thread: MainThread] - Discovered 1 services: ['F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C']
+[2025-08-05 20:58:13,776] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:13,785] [INFO] [Thread: MainThread] - Discovered 1 characteristics for service F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C: ['A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D']
+[2025-08-05 20:58:13,786] [INFO] [Thread: MainThread] - Sent ANNOUNCE payload
+[2025-08-05 20:58:13,786] [INFO] [Thread: MainThread] - Sent NOISE_IDENTITY_ANNOUNCE
+[2025-08-05 20:58:14,247] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:15,653] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:15,654] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Received notification: 010406000001987ce2ceb201004b7bfc1bfa7cd8d58bffffffffffffffff10000001987ce2ceb22442463335334232372d373044442d344242342d423234382d443731333434453545414437053831616b650004746573741037626663316266613763643864353862fcd61a2528bb09332352197afa52324264e75e6eed7a7cef1de1189bc2c99034d727b65b3ad465ad07eb03066a394ba033c8cfe7301966f1ab9d08d8d0903fff5298c02508086c8e4a430d3a0355069766e29729fd6353e4a7052e3f1be1e6710570413ebf1f143e98ef58d79b2fbebf433d3b3434ddf8ca17c472544f81a61dc92fa3b88ffb117e462f9300acb87bcd68d25345186a97
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: type=4 at pos=2
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: senderID=06000001987ce2ce at pos=10
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: recipientID=b201004b7bfc1bfa at pos=18
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175052944703487 at pos=26
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: ttl=255 at pos=27
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: payload_len=65535 at pos=29
+[2025-08-05 20:58:15,677] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Found '81ake' at position 77
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: senderID=e2ceb201004b7bfc at pos=10
+[2025-08-05 20:58:15,677] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58bffff at pos=18
+[2025-08-05 20:58:15,678] [INFO] [Thread: MainThread] - Parsing: timestamp=18446744073709490176 at pos=26
+[2025-08-05 20:58:15,678] [INFO] [Thread: MainThread] - Parsing: ttl=0 at pos=27
+[2025-08-05 20:58:15,678] [INFO] [Thread: MainThread] - Parsing: payload_len=408 at pos=29
+[2025-08-05 20:58:15,678] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:15,995] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:16,473] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:17,078] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:17,079] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:17,958] [INFO] [Thread: MainThread] - Received notification: 010406000001987ce2d7d401004c7bfc1bfa7cd8d58bffffffffffffffff10000001987ce2d7d42437374646333834392d394530362d343543382d393842352d384538464645453844353135053831616b650005626c616b651037626663316266613763643864353862972cef6758d3cd8881f8e74e2e626871b294a5d5b7077fbbc250e025ae51f95fd4616ec00233d5ea15370ae9d6f754198b79eca87d310f8f3330df5b9e9d8c60b1a4cd9814b28e48815cd99120a4b8ce3897b1c685ce0ca5f5002ba7d79716714de347d39bb92e4f809bcc3363830c018158be37f53da0bb505342cd18cce97690ef687faa50dee846411495305e26a24872a49ab896
+[2025-08-05 20:58:17,958] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:17,958] [INFO] [Thread: MainThread] - Parsing: type=4 at pos=2
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: senderID=06000001987ce2d7 at pos=10
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: recipientID=d401004c7bfc1bfa at pos=18
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175052944703487 at pos=26
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: ttl=255 at pos=27
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: payload_len=65535 at pos=29
+[2025-08-05 20:58:17,959] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Found 'blake' at position 84
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Found '81ake' at position 77
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:17,959] [INFO] [Thread: MainThread] - Parsing: senderID=e2d7d401004c7bfc at pos=10
+[2025-08-05 20:58:17,960] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58bffff at pos=18
+[2025-08-05 20:58:17,960] [INFO] [Thread: MainThread] - Parsing: timestamp=18446744073709490176 at pos=26
+[2025-08-05 20:58:17,960] [INFO] [Thread: MainThread] - Parsing: ttl=0 at pos=27
+[2025-08-05 20:58:17,960] [INFO] [Thread: MainThread] - Parsing: payload_len=408 at pos=29
+[2025-08-05 20:58:17,960] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:19,262] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:19,543] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Received notification: 010406000001987ce2e52901004c7bfc1bfa7cd8d58bffffffffffffffff10000001987ce2e5292436333432354537302d374536432d343236382d393238332d373133453644314437344145053831616b6500053831616b651037626663316266613763643864353862f9bd6848c16ae96c3e175395b7200344ada12aa24c489ecc7b273bd8eac4580b5dd91dcc3a7ea2dd18b75a115113fd68da94b8de20c9c0d337fbec0af32ebf2b3ebf17bcd2af3b239536551c5273afb36d7fd7ab5e708bb8a842b74214738db4bb29090983edf2a5b94b9571c0c671dc66d8332c1cd491ffcf7cefca84b2428a00945a16e7e43b9b648ddafd213a79299f52892b5e96
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Parsing: type=4 at pos=2
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Parsing: senderID=06000001987ce2e5 at pos=10
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Parsing: recipientID=2901004c7bfc1bfa at pos=18
+[2025-08-05 20:58:21,408] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175052944703487 at pos=26
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: ttl=255 at pos=27
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: payload_len=65535 at pos=29
+[2025-08-05 20:58:21,409] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Found '81ake' at position 77
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: senderID=e2e52901004c7bfc at pos=10
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58bffff at pos=18
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: timestamp=18446744073709490176 at pos=26
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: ttl=0 at pos=27
+[2025-08-05 20:58:21,409] [INFO] [Thread: MainThread] - Parsing: payload_len=408 at pos=29
+[2025-08-05 20:58:21,410] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:22,295] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:22,295] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:25,573] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:25,574] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:25,870] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:25,871] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:26,123] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:26,144] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:27,049] [INFO] [Thread: MainThread] - Received notification: 010103000001987ce2fb3a00000b7bfc1bfa7cd8d58b68656c6c6f5f776f726c64b41b5a78552468c64f8a5b21b51e5e9566045b9ea20bb065611ccf3506dc6aad34938dd9a198537d2a76bddc285a28c315187e5d4088fe6d734a89bdd493b626eabf29959269e707d8c1fbd02d1c3929a057d1608ffc2967c494da800eb1adbee9b461a8df01957433e3e6d4698f538fda35f86d2c00514a246848b0825da35f4d1fcbfd4a48e059e12256934b26142a7861e3db08ee6342c6946b3d26be34d1e4cf17eb202fe422cda0da35ac36259ecb286692364cb49a7030519c0aaff91d27c68836c66e3bbeb945e1de50b6fca81476d36ebcd5e872817290a1a3cedf
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: type=1 at pos=2
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: senderID=03000001987ce2fb at pos=10
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: recipientID=3a00000b7bfc1bfa at pos=18
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175050401213548 at pos=26
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: ttl=111 at pos=27
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: payload_len=24439 at pos=29
+[2025-08-05 20:58:27,050] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:27,050] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:27,051] [INFO] [Thread: MainThread] - Parsing: senderID=e2fb3a00000b7bfc at pos=10
+[2025-08-05 20:58:27,051] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58b6865 at pos=18
+[2025-08-05 20:58:27,051] [INFO] [Thread: MainThread] - Parsing: timestamp=7812741909397336684 at pos=26
+[2025-08-05 20:58:27,051] [INFO] [Thread: MainThread] - Parsing: ttl=100 at pos=27
+[2025-08-05 20:58:27,051] [INFO] [Thread: MainThread] - Parsing: payload_len=46107 at pos=29
+[2025-08-05 20:58:27,051] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:27,077] [INFO] [Thread: MainThread] - Received notification: 010103000001987ce2fb4500000b7bfc1bfa7cd8d58b68656c6c6f5f776f726c642018436f8986e69141453be4d5932d4365a88696280d0eaddaea7c77bfa1aedea15b45f2aa28e11d8533d6a6bd2473f264296ea532a475e847d8892ff6b01c7a8c80a219b73d116721acbc962bc1a1ce0623978fd0b2ec2f5b13ba830ab2dd79de62d9fb6e1ed1b7a53ef76c7f8fdd30902c2761f25fb281bfbb792f4bbb749e3614b1f77d9e8a30cec54671e6480dc1469345d43fbd988b96b0cc5a5d90c6f438e972d33a748464bf6ab38990a3f614034cc0efd18e652640739f1866e04991024461109253886c5d34bf4bde80060c83fba1d87199dd5f8e781d4611dedf
+[2025-08-05 20:58:27,077] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:27,077] [INFO] [Thread: MainThread] - Parsing: type=1 at pos=2
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: senderID=03000001987ce2fb at pos=10
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: recipientID=4500000b7bfc1bfa at pos=18
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175050401213548 at pos=26
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: ttl=111 at pos=27
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: payload_len=24439 at pos=29
+[2025-08-05 20:58:27,078] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: senderID=e2fb4500000b7bfc at pos=10
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58b6865 at pos=18
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: timestamp=7812741909397336684 at pos=26
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: ttl=100 at pos=27
+[2025-08-05 20:58:27,078] [INFO] [Thread: MainThread] - Parsing: payload_len=8216 at pos=29
+[2025-08-05 20:58:27,078] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:32,149] [INFO] [Thread: MainThread] - Received notification: 010406000001987ce30ea70100587bfc1bfa7cd8d58bffffffffffffffff10000001987ce30ea72439433642374541372d434539332d343045452d393635362d4445394435413939424444430b68656c6c6f5f776f726c64000b3831616b6520626c616b65103762666331626661376364386435386232a9d4de98846f961728ffd528ff66c0aa1707454b69bf96ae8b299606301bdfa0ebe5493a4b962236aab7eebcde81ef372f79e2c6af96a24969dfc71779581f0b1bf091152e51a8c134c42bbcd861d5567a7be7c4211a3a3ff397700129e19c43c7bb47d8db949c3675f0e1271c7f685548df77a2667939d67e77194379db69a284119af02b36852b8a
+[2025-08-05 20:58:32,149] [INFO] [Thread: MainThread] - Parsing: version=1 at pos=1
+[2025-08-05 20:58:32,149] [INFO] [Thread: MainThread] - Parsing: type=4 at pos=2
+[2025-08-05 20:58:32,149] [INFO] [Thread: MainThread] - Parsing: senderID=06000001987ce30e at pos=10
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: recipientID=a70100587bfc1bfa at pos=18
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: timestamp=8996175052944703487 at pos=26
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: ttl=255 at pos=27
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: payload_len=65535 at pos=29
+[2025-08-05 20:58:32,150] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Failed to parse received packet - attempting alternative parse
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Found 'blake' at position 96
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Found '81ake' at position 90
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: version=152 at pos=1
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: type=124 at pos=2
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: senderID=e30ea70100587bfc at pos=10
+[2025-08-05 20:58:32,150] [INFO] [Thread: MainThread] - Parsing: recipientID=1bfa7cd8d58bffff at pos=18
+[2025-08-05 20:58:32,151] [INFO] [Thread: MainThread] - Parsing: timestamp=18446744073709490176 at pos=26
+[2025-08-05 20:58:32,151] [INFO] [Thread: MainThread] - Parsing: ttl=0 at pos=27
+[2025-08-05 20:58:32,151] [INFO] [Thread: MainThread] - Parsing: payload_len=408 at pos=29
+[2025-08-05 20:58:32,151] [ERROR] [Thread: MainThread] - Parsing failed: payload_len exceeds data length
+[2025-08-05 20:58:32,475] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:32,475] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:32,482] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:32,752] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:32,752] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:33,022] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:33,022] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '6F2DA850-4763-24C2-7E93-5D1701230A6F, Name: None, State: 0
+[2025-08-05 20:58:33,035] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+[2025-08-05 20:58:33,037] [INFO] [Thread: MainThread] - Discovered peripheral - Identifier: '294328D1-4868-4794-ED76-45C009601AEC, Name: None, State: 0
+^C%   
