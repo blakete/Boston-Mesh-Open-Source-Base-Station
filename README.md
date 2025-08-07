@@ -4,7 +4,7 @@ Open Source 🛠️  Decentralized 🌐  Encrypted 🔐  Uncensorable 🗣️  U
 
 **Part of the [Boston Mesh Project](https://primal.net/p/nprofile1qqsfccxvukwe8vnqwcd6t5l4kvjnl32jt6spcjpv6w7whyx54s9uhzs8v35q7)**
 
-An open-source **relay & base station node** for the [BitChat](https://github.com/permissionlesstech/bitchat/tree/main) peer-to-peer messaging protocol.  
+An open-source **relay & base station node** for the [BitChat](https://bitchat.free) peer-to-peer messaging protocol.  
 Built to extend BitChat’s range, reliability, and resilience across Boston—and beyond!
 
 ---
@@ -25,6 +25,7 @@ Build a **cheap, open-source** BitChat base station & relay to extend peer disco
 ---
 
 ## References
+- [https://bitchat.free](https://bitchat.free)
 - **BitChat Whitepaper** – https://github.com/permissionlesstech/bitchat/blob/main/WHITEPAPER.md  
 - **BitChat for iOS** – https://github.com/permissionlesstech/bitchat  
 - **BitChat for Android (Kotlin)** – https://github.com/permissionlesstech/bitchat-android  
