@@ -1,0 +1,1 @@
+btle.advertising_header.pdu_type == 0x04 and !(eth.src == 66:55:cd:08:2a:1f) and !(eth.src == 66:55:cd:08:2a:1f) and !(btcommon.eir_ad.entry.company_id == 0x058e) and !(frame[22:18] == 11:09:47:6f:76:65:65:5f:48:36:30:37:36:4f:30:24:34:42)

@@ -1,0 +1,71 @@
+[2025-08-05 23:14:25,030] [INFO] - Central manager state updated: 5
+[2025-08-05 23:14:25,030] [INFO] - Scanning for peripherals with services...
+[2025-08-05 23:14:25,084] [INFO] - <CBPeripheral identifier = 9FC8D393-6C6A-6B55-6A20-D552D430CBF2, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,090] [INFO] - <CBPeripheral identifier = 32581976-6DAE-BC6D-7434-D56D197FD24A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,096] [INFO] - <CBPeripheral identifier = 67D447C3-F3EB-9ACA-4B52-020AB38F406F, state = 0, name = ENVY Photo 7800 series> - Discovered peripheral
+[2025-08-05 23:14:25,106] [INFO] - <CBPeripheral identifier = CD13D62B-7C33-D64B-B7BE-A4A5863E9907, state = 0, name = C by GE> - Discovered peripheral
+[2025-08-05 23:14:25,124] [INFO] - <CBPeripheral identifier = EDD349DB-B96D-654D-E839-857373BA3BBC, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,124] [INFO] - <CBPeripheral identifier = 511A202F-3066-ECDD-0D4E-6B40409979B9, state = 0, name = Govee_H6076_6E4E> - Discovered peripheral
+[2025-08-05 23:14:25,130] [INFO] - <CBPeripheral identifier = DFC4B95F-99CE-0AEE-F3E2-2B78248BA96B, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,382] [INFO] - <CBPeripheral identifier = 044B7EE7-4A3A-79A0-F56B-49CBC60BB6C2, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,395] [INFO] - <CBPeripheral identifier = ADA4F216-E737-8C67-8B96-3A21EAC6678E, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,414] [INFO] - <CBPeripheral identifier = DA250B9E-3DD7-418F-2BE4-5AAB532FD603, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:25,671] [INFO] - <CBPeripheral identifier = 06AD159C-0856-B048-21DB-7F8BF2470EA2, state = 0, name = [TV] Samsung TU690T 50 TV> - Discovered peripheral
+[2025-08-05 23:14:25,684] [INFO] - <CBPeripheral identifier = FCFDF6A9-4DF4-0A6E-C8FA-8ABD308B9B10, state = 0, name = Core200S> - Discovered peripheral
+[2025-08-05 23:14:25,712] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 0, name = Blake’s iPhone> - Discovered peripheral
+[2025-08-05 23:14:25,973] [INFO] - <CBPeripheral identifier = C3CDCCA0-6812-E4C9-4414-BA3C76B04D9B, state = 0, name = Govee_H6076_044B> - Discovered peripheral
+[2025-08-05 23:14:26,032] [INFO] - <CBPeripheral identifier = 668F4D03-B9B9-C4AA-EE37-CB4687203ACD, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:26,324] [INFO] - <CBPeripheral identifier = E44B0EF5-4E5B-0D3D-4A98-6BC4F9A8AC18, state = 0, name = Quest 3> - Discovered peripheral
+[2025-08-05 23:14:26,579] [INFO] - <CBPeripheral identifier = 123B0EF4-0E2A-10F4-BB40-CFC40C39E42E, state = 0, name = GVH71736A91> - Discovered peripheral
+[2025-08-05 23:14:26,588] [INFO] - <CBPeripheral identifier = 5971E040-E000-17BE-0453-E9B86A0B9F83, state = 0, name = TT> - Discovered peripheral
+[2025-08-05 23:14:26,599] [INFO] - <CBPeripheral identifier = 3064789E-2757-508E-B357-7415077CE0AE, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:26,869] [INFO] - <CBPeripheral identifier = 4A707163-6B94-B1E0-0E13-3BD2FAE4BB10, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:26,884] [INFO] - <CBPeripheral identifier = 0620B61B-0848-4AA1-0263-60FF2D5EE6D0, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:27,169] [INFO] - <CBPeripheral identifier = 2AF0D0AC-AF6D-51F1-6611-FB3A666F4EF9, state = 0, name = SB1PD68D> - Discovered peripheral
+[2025-08-05 23:14:27,188] [INFO] - <CBPeripheral identifier = F2B6E79A-79A0-04B9-C67F-F915C1875765, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:27,196] [INFO] - <CBPeripheral identifier = 20B7D0E0-8D12-295C-99C6-90820C43AA30, state = 0, name = Blake’s Apple Watch> - Discovered peripheral
+[2025-08-05 23:14:27,517] [INFO] - <CBPeripheral identifier = E5701387-82E3-0911-1FB2-A74FE4300E35, state = 0, name = Blake’s iPad> - Discovered peripheral
+[2025-08-05 23:14:28,087] [INFO] - <CBPeripheral identifier = 51DCDFE4-EA2B-7CFF-604A-7D11CE4C3E69, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:28,992] [INFO] - <CBPeripheral identifier = F96060AB-8E37-6F5B-5A50-A1FEDF97741E, state = 0, name = [TV] Samsung 7 Series (65)> - Discovered peripheral
+[2025-08-05 23:14:29,330] [INFO] - <CBPeripheral identifier = 5C394C89-EAF8-4117-DA4E-41BA58F1340A, state = 0, name = N02Z0> - Discovered peripheral
+[2025-08-05 23:14:29,623] [INFO] - <CBPeripheral identifier = A8BC6AEB-71F8-9FE6-59DA-FBD289FB0FF0, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:30,804] [INFO] - <CBPeripheral identifier = 40C804F3-AFF3-ECA3-CF27-DD7D0B657D2A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:31,982] [INFO] - <CBPeripheral identifier = B661DC58-446D-93BF-BE5F-87D7BE2F3E03, state = 0, name = LE-BLACK MAGIC> - Discovered peripheral
+[2025-08-05 23:14:32,021] [INFO] - <CBPeripheral identifier = 0BC4D9C0-6A39-1D8C-84D1-F3427D397269, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:32,308] [INFO] - <CBPeripheral identifier = A99E7C71-D711-E4D7-BE11-B809B67C43A9, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:34,662] [INFO] - <CBPeripheral identifier = 6DEFB42E-7914-FBD0-0D05-613E805F3A57, state = 0, name = N07ET> - Discovered peripheral
+[2025-08-05 23:14:35,268] [INFO] - <CBPeripheral identifier = 45F44706-502F-195A-E90B-25C075452733, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:35,273] [INFO] - <CBPeripheral identifier = EE61B249-35F5-1BE2-495B-FE7791233C59, state = 0, name = LE-Johns Speaker> - Discovered peripheral
+[2025-08-05 23:14:35,884] [INFO] - <CBPeripheral identifier = 62DBC71B-67B1-D328-C634-11F2BC7C4DAB, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:37,724] [INFO] - <CBPeripheral identifier = 1472B8ED-FE31-71CA-32A2-7DABDC28A156, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:38,319] [INFO] - <CBPeripheral identifier = 62BC00A0-4588-D44B-0EDE-363F19F1EAF1, state = 0, name = N010M> - Discovered peripheral
+[2025-08-05 23:14:38,894] [INFO] - <CBPeripheral identifier = D174EF10-2CB5-4A4A-75E4-7E11A659222C, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:39,477] [INFO] - <CBPeripheral identifier = C665CC09-BB8A-2C2D-A9C2-C385C9850166, state = 0, name = Govee_H6056_2843> - Discovered peripheral
+[2025-08-05 23:14:41,021] [INFO] - <CBPeripheral identifier = 7DE8CF05-A42A-4679-A942-B34F766B8915, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:41,309] [INFO] - <CBPeripheral identifier = 52336A59-7D69-9545-E91B-F52067E6524D, state = 0, name = TY> - Discovered peripheral
+[2025-08-05 23:14:46,336] [INFO] - <CBPeripheral identifier = 1D215D5A-3E6E-AC02-A516-D027039E0B84, state = 0, name = blakes airpod pros> - Discovered peripheral
+[2025-08-05 23:14:48,756] [INFO] - <CBPeripheral identifier = 283F5761-F348-AD57-FC78-3ABE27084C83, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:48,798] [INFO] - <CBPeripheral identifier = 35D3834D-4B42-80C7-0D41-CA839969D77D, state = 0, name = SENSE4BA357> - Discovered peripheral
+[2025-08-05 23:14:50,290] [INFO] - <CBPeripheral identifier = 28DCC82C-BDB7-6CFE-5E56-27F19CB5F11F, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:51,158] [INFO] - <CBPeripheral identifier = 3701FABC-2961-944E-5629-48F084B2C24F, state = 0, name = Govee_H6076_4688> - Discovered peripheral
+[2025-08-05 23:14:56,258] [INFO] - <CBPeripheral identifier = 98A4F0B8-2DF0-41BB-045E-EB27E2EC3F76, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:14:58,369] [INFO] - <CBPeripheral identifier = B82F633F-A4A2-DB69-A585-50DC2BF513EE, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:01,334] [INFO] - <CBPeripheral identifier = 1A1A9F2C-EC06-2A0E-BDB4-F0AF0928AF55, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:02,317] [INFO] - <CBPeripheral identifier = 2510967C-F357-7A15-DBD6-858AC29E6FA7, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:02,957] [INFO] - <CBPeripheral identifier = 67C26854-44C1-17C8-7F10-67E0DF8ED224, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:03,024] [INFO] - <CBPeripheral identifier = B3F79822-2818-0CB2-3BFD-EEE4BFA278DE, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:04,274] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 0, name = Blake’s iPhone> - Connecting to peripheral with services (RSSI: -35)
+[2025-08-05 23:15:04,716] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Connected to peripheral
+[2025-08-05 23:15:04,717] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Discovering peripheral's services
+[2025-08-05 23:15:04,939] [INFO] - <CBPeripheral identifier = 8F96C877-362A-CBC4-9D48-2C7ED780F922, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:05,071] [INFO] - <CBPeripheral identifier = 3D714D26-76E1-2A6D-F7A1-8BAB1C550319, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:05,165] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Discovered 6 services: ['180A', 'D0611E78-BBB4-4591-A5F8-487910AE4366', '9FA480E0-4967-4542-9390-D343DC5D04AE', '180F', '1805', 'F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C']
+[2025-08-05 23:15:05,166] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - BITCHAT SERVICE FOUND - Discovering service characteristics...
+[2025-08-05 23:15:05,283] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Discovered 1 characteristics for service F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C: ['A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D']
+[2025-08-05 23:15:05,284] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - BITCHAT SERVICE CHARACTERISTIC FOUND
+[2025-08-05 23:15:05,284] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Sent ANNOUNCE payload
+[2025-08-05 23:15:05,284] [INFO] - <CBPeripheral identifier = B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB, state = 2, name = Blake’s iPhone> - Sent NOISE_IDENTITY_ANNOUNCE
+[2025-08-05 23:15:06,091] [INFO] - <CBPeripheral identifier = 50A797ED-C8DA-3AD7-A378-629A058398C3, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:06,374] [INFO] - <CBPeripheral identifier = F407E7E1-F8AB-B94F-D236-BC484B4AF07A, state = 0, name = Unknown> - Discovered peripheral
+[2025-08-05 23:15:06,380] [INFO] - <CBPeripheral identifier = E70BDA21-FA16-5E44-E4A6-7829ECC138C3, state = 0, name = Unknown> - Discovered peripheral
+^C%

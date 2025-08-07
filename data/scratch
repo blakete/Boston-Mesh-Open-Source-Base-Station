@@ -1,0 +1,287 @@
+Frame 4: 42 bytes on wire (336 bits), 42 bytes captured (336 bits)
+Bluetooth
+    [Source: 54:4e:54:a1:6f:51 (54:4e:54:a1:6f:51)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x1760 (PDU Type: ADV_IND, ChSel: #2, TxAdd: Random)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..1. .... = Channel Selection Algorithm: #2
+        .1.. .... = Tx Address: Random
+        0... .... = Reserved: 0
+        Length: 23
+    Advertising Address: 54:4e:54:a1:6f:51 (54:4e:54:a1:6f:51)
+    Advertising Data
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...1 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): true (0x1)
+            .... 1... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): true (0x1)
+            .... .0.. = BR/EDR Not Supported: false (0x0)
+            .... ..1. = LE General Discoverable Mode: true (0x1)
+            .... ...0 = LE Limited Discoverable Mode: false (0x0)
+        Manufacturer Specific
+            Length: 10
+            Type: Manufacturer Specific (0xff)
+            Company ID: Apple, Inc. (0x004c)
+            Data: 10052918a8f849
+                [Expert Info (Note/Undecoded): Undecoded]
+                    [Undecoded]
+                    [Severity level: Note]
+                    [Group: Undecoded]
+        Tx Power Level
+            Length: 2
+            Type: Tx Power Level (0x0a)
+            Power Level (dBm): 0
+    CRC: 0xc038a2
+
+
+
+
+
+
+
+
+
+
+
+Frame 50: 55 bytes on wire (440 bits), 55 bytes captured (440 bits)
+Bluetooth
+    [Source: d5:38:32:b1:04:4b (d5:38:32:b1:04:4b)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x2460 (PDU Type: ADV_IND, ChSel: #2, TxAdd: Random)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..1. .... = Channel Selection Algorithm: #2
+        .1.. .... = Tx Address: Random
+        0... .... = Reserved: 0
+        Length: 36
+    Advertising Address: d5:38:32:b1:04:4b (d5:38:32:b1:04:4b)
+    Advertising Data
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...0 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): false (0x0)
+            .... 0... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): false (0x0)
+            .... .1.. = BR/EDR Not Supported: true (0x1)
+            .... ..1. = LE General Discoverable Mode: true (0x1)
+            .... ...0 = LE Limited Discoverable Mode: false (0x0)
+        Device Name: G/vee_H6076_044B
+            Length: 17
+            Type: Device Name (0x09)
+            Device Name: G/vee_H6076_044B
+        Manufacturer Specific
+            Length: 8
+            Type: Manufacturer Specific (0xff)
+            Company ID: Unknown (0x8802)
+            Data: ec00010100
+                [Expert Info (Note/Undecoded): Undecoded]
+                    [Undecoded]
+                    [Severity level: Note]
+                    [Group: Undecoded]
+    CRC: 0xbffd99
+        [Expert Info (Warning/Checksum): Incorrect CRC]
+            [Incorrect CRC]
+            [Severity level: Warning]
+            [Group: Checksum]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frame 34: 43 bytes on wire (344 bits), 43 bytes captured (344 bits)
+Bluetooth
+    [Source: d5:38:32:31:04:4b (d5:38:32:31:04:4b)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x1844 (PDU Type: SCAN_RSP, TxAdd: Random)
+        .... 0100 = PDU Type: 0x4 SCAN_RSP
+        ...0 .... = Reserved: 0
+        ..0. .... = Reserved: 0
+        .1.. .... = Tx Address: Random
+        0... .... = Reserved: 0
+        Length: 24
+    Advertising Address: d5:38:32:31:04:4b (d5:38:32:31:04:4b)
+    Scan Response Data: 1109476f7665655f48363037365f30343442
+        Advertising Data
+            Device Name: Govee_H6076_044B
+                Length: 17
+                Type: Device Name (0x09)
+                Device Name: Govee_H6076_044B
+    CRC: 0xda15c2
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frame 2: 56 bytes on wire (448 bits), 56 bytes captured (448 bits)
+Bluetooth
+    [Source: Private_50:6a:91 (60:74:f4:50:6a:91)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x2500 (PDU Type: ADV_IND, ChSel: #1, TxAdd: Public)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..0. .... = Channel Selection Algorithm: #1
+        .0.. .... = Tx Address: Public
+        0... .... = Reserved: 0
+        Length: 37
+    Advertising Address: Private_50:6a:91 (60:74:f4:50:6a:91)
+    Advertising Data
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...0 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): false (0x0)
+            .... 0... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): false (0x0)
+            .... .1.. = BR/EDR Not Supported: true (0x1)
+            .... ..0. = LE General Discoverable Mode: false (0x0)
+            .... ...1 = LE Limited Discoverable Mode: true (0x1)
+        Device Name: GVH71736A91
+            Length: 12
+            Type: Device Name (0x09)
+            Device Name: GVH71736A91
+        Manufacturer Specific
+            Length: 14
+            Type: Manufacturer Specific (0xff)
+            Company ID: Unknown (0x8803)
+            Data: ec00010100000000000000
+                [Expert Info (Note/Undecoded): Undecoded]
+                    [Undecoded]
+                    [Severity level: Note]
+                    [Group: Undecoded]
+    CRC: 0xc94d4a
+
+
+
+Frame 21: 56 bytes on wire (448 bits), 56 bytes captured (448 bits)
+Bluetooth
+    [Source: Private_50:6a:91 (60:74:f4:50:6a:91)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x2500 (PDU Type: ADV_IND, ChSel: #1, TxAdd: Public)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..0. .... = Channel Selection Algorithm: #1
+        .0.. .... = Tx Address: Public
+        0... .... = Reserved: 0
+        Length: 37
+    Advertising Address: Private_50:6a:91 (60:74:f4:50:6a:91)
+    Advertising Data
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...0 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): false (0x0)
+            .... 0... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): false (0x0)
+            .... .1.. = BR/EDR Not Supported: true (0x1)
+            .... ..0. = LE General Discoverable Mode: false (0x0)
+            .... ...1 = LE Limited Discoverable Mode: true (0x1)
+        Device Name: GVH71736A91
+            Length: 12
+            Type: Device Name (0x09)
+            Device Name: GVH71736A91
+        Manufacturer Specific
+            Length: 14
+            Type: Manufacturer Specific (0xff)
+            Company ID: Unknown (0x8803)
+            Data: ec00010100000000000000
+                [Expert Info (Note/Undecoded): Undecoded]
+                    [Undecoded]
+                    [Severity level: Note]
+                    [Group: Undecoded]
+    CRC: 0xc94d4a
+
+
+
+
+
+
+
+
+
+
+
+
+
+Frame 69: 49 bytes on wire (392 bits), 49 bytes captured (392 bits)
+Bluetooth
+    [Source: b2:13:bc:4b:a3:57 (b2:13:bc:4b:a3:57)]
+    [Destination: Broadcast (ff:ff:ff:ff:ff:ff)]
+Bluetooth Low Energy RF Info
+Bluetooth Low Energy Link Layer
+    Access Address: 0x8e89bed6
+    Packet Header: 0x1e00 (PDU Type: ADV_IND, ChSel: #1, TxAdd: Public)
+        .... 0000 = PDU Type: 0x0 ADV_IND
+        ...0 .... = Reserved: 0
+        ..0. .... = Channel Selection Algorithm: #1
+        .0.. .... = Tx Address: Public
+        0... .... = Reserved: 0
+        Length: 30
+    Advertising Address: b2:13:bc:4b:a3:57 (b2:13:bc:4b:a3:57)
+    Advertising Data
+        Flags
+            Length: 2
+            Type: Flags (0x01)
+            000. .... = Reserved: 0x0
+            ...0 .... = Simultaneous LE and BR/EDR to Same Device Capable (Host): false (0x0)
+            .... 0... = Simultaneous LE and BR/EDR to Same Device Capable (Controller): false (0x0)
+            .... .1.. = BR/EDR Not Supported: true (0x1)
+            .... ..1. = LE General Discoverable Mode: true (0x1)
+            .... ...0 = LE Limited Discoverable Mode: false (0x0)
+        Manufacturer Specific
+            Length: 20
+            Type: Manufacturer Specific (0xff)
+            Company ID: Allegion (0x013b)
+            Data: 01000802012973b213bc4ba35795000000
+                [Expert Info (Note/Undecoded): Undecoded]
+                    [Undecoded]
+                    [Severity level: Note]
+                    [Group: Undecoded]
+    CRC: 0xa96303
+
+
+
+
+
+
+0000   0c 00 00 00 00 00 00 00 01 00 d6 be 89 8e 60 17
+0010   51 6f a1 54 4e 54 02 01 1a 0a ff 4c 00 10 05 29
+0020   18 a8 f8 49 02 0a 00 03 1c 45
+
+
+

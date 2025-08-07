@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://code.visualstudio.com/docs/python/debugging
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug BitChat Mac",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/mac_bitchat_ble.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                // Allow PyObjC to initialize safely in a forked Python process:
+                "OBJC_DISABLE_INITIALIZE_FORK_SAFETY": "YES",
+                // Unbuffered output (optional, for real-time logging)
+                "PYTHONUNBUFFERED": "1",
+                // Ensure your module path is visible:
+                "PYTHONPATH": "${workspaceFolder}",
+                // (Optional) Override defaults via env if you modify your script accordingly:
+                "MY_PEER_ID": "0123456789abcdef",
+                "MY_NICKNAME": "BlakeMBPro"
+            },
+            "envFile": "${workspaceFolder}/.env", // if you prefer to keep secrets out of source
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

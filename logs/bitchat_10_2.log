@@ -1,0 +1,181 @@
+$  /usr/bin/env /Users/blake/repos/Boston-Mesh-Open-Source-Base-Sta
+tion/.venv-mesh/bin/python /Users/blake/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/libs/debugpy/ad
+apter/../../debugpy/launcher 50382 -- /Users/blake/repos/Boston-Mesh-Open-Source-Base-Station/src/bitchat_10.py 
+2025-08-05 20:35:34.184497 Central manager state updated: 5
+2025-08-05 20:35:34.184532 Central powered on; scanning
+2025-08-05 20:35:34.218570 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:34.233206 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.233293 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.270799 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.297228 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.348020 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:34.365386 Discovered peer: Blake’s iPhone with RSSI: -49 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.365556 Discovered peer: Blake’s iPhone with RSSI: -49 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.402458 Discovered peer: Blake’s iPhone with RSSI: -48 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.402585 Discovered peer: Blake’s iPhone with RSSI: -49 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.440810 Discovered peer: Blake’s iPhone with RSSI: -49 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.441007 Discovered peer: Blake’s iPhone with RSSI: -48 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.470956 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.471204 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.543160 Discovered peer: Blake’s iPhone with RSSI: -50 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.543299 Discovered peer: Blake’s iPhone with RSSI: -50 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.654897 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.655048 Discovered peer: Blake’s iPhone with RSSI: -47 ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.668655 Connected to Blake’s iPhone ID: B6F60CBC-1BE2-A0B1-CE57-600B1404CAAB
+2025-08-05 20:35:34.904682 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:35.147963 Discovered 1 services: ['F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C']
+2025-08-05 20:35:35.174123 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:35.174502 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:35.298315 Discovered 1 characteristics for service F47B5E2D-4A9E-4C5A-9B3F-8E1D2C3A4B5C: ['A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D']
+2025-08-05 20:35:35.299254 Sent ANNOUNCE payload
+2025-08-05 20:35:35.299514 Sent NOISE_IDENTITY_ANNOUNCE
+2025-08-05 20:35:35.727482 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:35.728097 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:36.269967 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:36.962266 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:36.962896 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:37.581525 Received notification: 010406000001987cce15e001004b14b0e0e57cca96eaffffffffffffffff10000001987cce15e02434444243343231442d443133462d343438442d413638392d39323446363041384642344605626c616b650004746573741031346230653065353763636139366561d145edc730db83dcb27604e0e9691eff1fce4033f5f4538fbc878c0221e4f51c86bd3c161a39b9bc1f39da0a03bb3811beeee1c34ee61d6c8b0643ee9dd42c9145dd52a8479caee7e76b1cad1fb113222927e0006ed00d86875336a6f413e5ffb7199e39289847d61a4b2dd9eb02f727e4df20ea1475cc46764504942043c8394d5dcdd4643e2e61b24bc91ef62878f8e0804a74103597
+2025-08-05 20:35:37.581780 Parsing: version=1 at pos=1
+2025-08-05 20:35:37.581821 Parsing: type=4 at pos=2
+2025-08-05 20:35:37.581845 Parsing: senderID=06000001987cce15 at pos=10
+2025-08-05 20:35:37.581860 Parsing: recipientID=e001004b14b0e0e5 at pos=18
+2025-08-05 20:35:37.581873 Parsing: timestamp=8992165542060097535 at pos=26
+2025-08-05 20:35:37.581886 Parsing: ttl=255 at pos=27
+2025-08-05 20:35:37.581897 Parsing: payload_len=65535 at pos=29
+2025-08-05 20:35:37.581910 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:37.581937 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:35:37.582035 Found 'blake' at position 77
+2025-08-05 20:35:37.582060 Found 'd' at position 237
+2025-08-05 20:35:37.582084 Parsing: version=152 at pos=1
+2025-08-05 20:35:37.582099 Parsing: type=124 at pos=2
+2025-08-05 20:35:37.582112 Parsing: senderID=ce15e001004b14b0 at pos=10
+2025-08-05 20:35:37.582126 Parsing: recipientID=e0e57cca96eaffff at pos=18
+2025-08-05 20:35:37.582137 Parsing: timestamp=18446744073709490176 at pos=26
+2025-08-05 20:35:37.582149 Parsing: ttl=0 at pos=27
+2025-08-05 20:35:37.582160 Parsing: payload_len=408 at pos=29
+2025-08-05 20:35:37.582171 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:38.779644 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:39.049744 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:39.327144 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:39.327561 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:39.965402 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:40.508375 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:42.982515 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:43.258807 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:43.259478 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:43.531279 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:45.668498 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.531291 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.531579 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.553520 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.553918 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.809426 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.833067 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.833464 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:46.940542 Received notification: 010103000001987cce3a6600000514b0e0e57cca96ea3831616b6501cf846c2cab8581ab9391bd662788b257045ade655988c49ee92aea408258db571868896e9ac6f2fb5d4ad2f7ca7881e4725b4bd4d3886d5907d1704b653356aad720caac0e11be73249ebbd34486bf1b859f70a2759c377dd1dee3fd910f3a7f1774b79cb15daf80373beed1b55cbfedc7dc8dff1079b90ffd0a32756573ae4841f51c5c63d4ae1cbd5a6ad0b141a55d3dee23dda0d12a6d178eac7db74170c1a48d50500eb867a4ab2c81a4674de2c36c426f58d5cb451de23bd5afc61bb7a80b90a8e8d0e352fc560ab8335df64821706d34f425c7ddc9b651ade1c4490c2b78d43fe5
+2025-08-05 20:35:46.940724 Parsing: version=1 at pos=1
+2025-08-05 20:35:46.940775 Parsing: type=1 at pos=2
+2025-08-05 20:35:46.940810 Parsing: senderID=03000001987cce3a at pos=10
+2025-08-05 20:35:46.940839 Parsing: recipientID=6600000514b0e0e5 at pos=18
+2025-08-05 20:35:46.940882 Parsing: timestamp=8992165538707890539 at pos=26
+2025-08-05 20:35:46.940913 Parsing: ttl=101 at pos=27
+2025-08-05 20:35:46.940940 Parsing: payload_len=463 at pos=29
+2025-08-05 20:35:46.940965 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:46.941014 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:35:46.941077 Parsing: version=152 at pos=1
+2025-08-05 20:35:46.941109 Parsing: type=124 at pos=2
+2025-08-05 20:35:46.941132 Parsing: senderID=ce3a6600000514b0 at pos=10
+2025-08-05 20:35:46.941154 Parsing: recipientID=e0e57cca96ea3831 at pos=18
+2025-08-05 20:35:46.941178 Parsing: timestamp=7019815502637984812 at pos=26
+2025-08-05 20:35:46.941203 Parsing: ttl=171 at pos=27
+2025-08-05 20:35:46.941226 Parsing: payload_len=34177 at pos=29
+2025-08-05 20:35:46.941250 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:46.970012 Received notification: 010103000001987cce3a7400000514b0e0e57cca96ea3831616b651b5c901fbcfd8e0cec9ba38b555d0dc19273a577a1a276dad9f97ccf507d53fb1079227d94c53bfb894c7a2691d1f3936272c4b93ece5df7b93bc38571cbddb11cfcde9e7562246ef5800d9383eed9620e470719e12becf024e6c07209f1a3df88a3e437a86ec757ad259419239e18d8620c50ca75ceafce1876c2ae76a76edcb25eda80883dd68d848d09a968c81c6dd6d2d3867cf4d651cdc670fa548987651b850e8add78c3b905b718604b2cc535962d2246ea99f0de0c6c69699fbc44e8af03f077f20595b887991a4c67c8afa55445da7c923795b7fd1e5a1cf9c1232dc0f7dab3e5
+2025-08-05 20:35:46.970111 Parsing: version=1 at pos=1
+2025-08-05 20:35:46.970125 Parsing: type=1 at pos=2
+2025-08-05 20:35:46.970135 Parsing: senderID=03000001987cce3a at pos=10
+2025-08-05 20:35:46.970145 Parsing: recipientID=7400000514b0e0e5 at pos=18
+2025-08-05 20:35:46.970154 Parsing: timestamp=8992165538707890539 at pos=26
+2025-08-05 20:35:46.970164 Parsing: ttl=101 at pos=27
+2025-08-05 20:35:46.970172 Parsing: payload_len=7004 at pos=29
+2025-08-05 20:35:46.970181 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:46.970199 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:35:46.970223 Parsing: version=152 at pos=1
+2025-08-05 20:35:46.970232 Parsing: type=124 at pos=2
+2025-08-05 20:35:46.970240 Parsing: senderID=ce3a7400000514b0 at pos=10
+2025-08-05 20:35:46.970248 Parsing: recipientID=e0e57cca96ea3831 at pos=18
+2025-08-05 20:35:46.970256 Parsing: timestamp=7019815612378521532 at pos=26
+2025-08-05 20:35:46.970264 Parsing: ttl=253 at pos=27
+2025-08-05 20:35:46.970272 Parsing: payload_len=36364 at pos=29
+2025-08-05 20:35:46.970279 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:49.010405 Received notification: 010406000001987cce428b01004b14b0e0e57cca96eaffffffffffffffff10000001987cce428b2439393437424243462d353044412d344246412d424334312d373444313633413146343139053831616b65000474657374103134623065306535376363613936656195c09b6fbf9287083ee2b01113b4715555b3269d84f1835e7b3914daec292bc5ba3d5f20d2ffdcc87365369bda3888072fe417b13785bf9f225027ece72cb91fbb134730db599ce7c839774b6736e661fc04b4782640cbed3e7bdc9c4755043330e3164b11b754a9bc8ed3a1b4fde1ce80532614c7d1e34a98573bafa46c58911eaee459592685838cba5144e49cb36498089705f6db97
+2025-08-05 20:35:49.010609 Parsing: version=1 at pos=1
+2025-08-05 20:35:49.010668 Parsing: type=4 at pos=2
+2025-08-05 20:35:49.010710 Parsing: senderID=06000001987cce42 at pos=10
+2025-08-05 20:35:49.010748 Parsing: recipientID=8b01004b14b0e0e5 at pos=18
+2025-08-05 20:35:49.010787 Parsing: timestamp=8992165542060097535 at pos=26
+2025-08-05 20:35:49.010823 Parsing: ttl=255 at pos=27
+2025-08-05 20:35:49.010856 Parsing: payload_len=65535 at pos=29
+2025-08-05 20:35:49.010888 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:49.010953 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:35:49.011024 Found 'd' at position 248
+2025-08-05 20:35:49.011065 Parsing: version=152 at pos=1
+2025-08-05 20:35:49.011103 Parsing: type=124 at pos=2
+2025-08-05 20:35:49.011134 Parsing: senderID=ce428b01004b14b0 at pos=10
+2025-08-05 20:35:49.011166 Parsing: recipientID=e0e57cca96eaffff at pos=18
+2025-08-05 20:35:49.011198 Parsing: timestamp=18446744073709490176 at pos=26
+2025-08-05 20:35:49.011230 Parsing: ttl=0 at pos=27
+2025-08-05 20:35:49.011260 Parsing: payload_len=408 at pos=29
+2025-08-05 20:35:49.011289 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:50.658538 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:50.958644 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:52.329193 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:52.856488 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:52.857187 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:53.949689 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:53.950370 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:53.979494 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:53.979640 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:54.221481 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:54.534518 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:54.766674 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:54.767731 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:55.080727 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:55.081416 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:55.359820 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.150940 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.469697 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.470722 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.699333 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.700382 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.737167 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.979474 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:56.980326 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:57.296667 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:58.909017 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:58.909640 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:59.186626 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:59.187588 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:59.211556 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:59.357687 Received notification: 010406000001987cce6af101005214b0e0e57cca96eaffffffffffffffff10000001987cce6af12442393442414343462d393035332d343039312d383535422d423742463045464537323536053831616b65000b68656c6c6f20776f726c6410313462306530653537636361393665613f8420c3ac84bdea0e3f9269678f38a75ef51d30491d4636f14634efb05fd776cc068e2a67ac06dc41d85d4f8c89d47f22428d654831b969de42955c2f7261d40d476797141fcbb51c8caac54bfdfabf55cd105f4a9e7c58fb592d8ad2cf98b3e37996fa6ffc64d65d589c8b0685e4bdd9faa5d77c10e91ae40f70a0729d5f0f26598fbbb6f0f07c68acff5b4537de90
+2025-08-05 20:35:59.357833 Parsing: version=1 at pos=1
+2025-08-05 20:35:59.357870 Parsing: type=4 at pos=2
+2025-08-05 20:35:59.357893 Parsing: senderID=06000001987cce6a at pos=10
+2025-08-05 20:35:59.357909 Parsing: recipientID=f101005214b0e0e5 at pos=18
+2025-08-05 20:35:59.357971 Parsing: timestamp=8992165542060097535 at pos=26
+2025-08-05 20:35:59.357989 Parsing: ttl=255 at pos=27
+2025-08-05 20:35:59.358005 Parsing: payload_len=65535 at pos=29
+2025-08-05 20:35:59.358020 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:59.358049 Failed to parse received packet - attempting alternative parse
+2025-08-05 20:35:59.358087 Found 'd' at position 94
+2025-08-05 20:35:59.358110 Parsing: version=152 at pos=1
+2025-08-05 20:35:59.358124 Parsing: type=124 at pos=2
+2025-08-05 20:35:59.358139 Parsing: senderID=ce6af101005214b0 at pos=10
+2025-08-05 20:35:59.358154 Parsing: recipientID=e0e57cca96eaffff at pos=18
+2025-08-05 20:35:59.358167 Parsing: timestamp=18446744073709490176 at pos=26
+2025-08-05 20:35:59.358182 Parsing: ttl=0 at pos=27
+2025-08-05 20:35:59.358331 Parsing: payload_len=408 at pos=29
+2025-08-05 20:35:59.358364 Parsing failed: payload_len exceeds data length
+2025-08-05 20:35:59.454840 Discovered non-BitChat peripheral: None
+2025-08-05 20:35:59.455261 Discovered non-BitChat peripheral: None
+^C% 
