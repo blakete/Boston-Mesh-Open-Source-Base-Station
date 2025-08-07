@@ -24,6 +24,26 @@
             },
             "envFile": "${workspaceFolder}/.env", // if you prefer to keep secrets out of source
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Debug BitChat Pi",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/pi_bitchat_ble_chat.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--nickname",
+                "PiRelay",
+                "--scan-seconds",
+                "15",
+                "--dump-gatt"
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1",
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
